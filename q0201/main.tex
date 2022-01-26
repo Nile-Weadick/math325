@@ -1,0 +1,383 @@
+\input{thispreamble.tex}
+
+
+\renewcommand\AUTHOR{nweadick1@cougars.ccis.edu} % CHANGE TO YOURS
+
+\begin{document}
+\topmattertwo
+
+When writing results of computations, make sure it's simplified.
+For instance when you write down sets,
+if the answer is $\{1\}$, I do not
+want to see $\{1, 1\}$.
+
+When you write down an example or a counterexample,
+be elegant and write down the simplest.
+You only need to give a counterexample if asked.
+
+$P(X)$ denotes the powerset of $X$.
+
+In \LaTeX\, math notation is enclosed by the \verb!$! symbols.
+For instance \verb!$x = a_{1} + b^{2}$! gives you $x = a_{1} + b^{2}$. 
+
+(For more information about \LaTeX\, go to my
+website
+\href{http://bit.ly/yliow0}{http://bit.ly/yliow0},
+click on \verb!Yes!
+you are one of my students,
+then look for
+\href{https://drive.google.com/file/d/0BzjYrK0VFuMWZm5xV0kyR3J2Zm8/view?usp=sharing}{latex.pdf}.)
+
+For the next few questions,
+let $A = \{3, 2, \pi, 4\}$, $B = \{2,4,1,3,2,4\}$, $C = \{7, 5, 3\}$ 
+
+%------------------------------------------------------------------------------
+\nextq
+$|A| =  \answerbox{ 4 } $ (Please correct!)
+
+%------------------------------------------------------------------------------
+\nextq
+$|B| = \answerbox{ 4 } $
+
+%------------------------------------------------------------------------------
+\nextq
+What is $A \cup B$?
+\begin{answerlong}
+$A \cup B = \{ 1,2,3,4,pie\}$
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+What is $A \cap B$?
+\begin{answerlong}
+$A \cap B = \{2,3,4\}$
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+What is $A - C = \{ \answerbox{} \}$?
+\begin{answerlong}
+$A - C = \{ 2,pie,4 \}$
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+What is $A \times C$?
+\begin{answerlong}
+$A \times C = \{ (3,7),(3,5),(3,3),(2,7),(2,5),(2,3),(pi,7),(pi,5),(pi,3),(4,7),(4,5),(4,3)\}$
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+What is $P(C)$?
+\begin{answerlong}
+$P(C) = \{ \emptyset, \{3\}, \{5\}, \{7\}, \{3,5\}, \{3,7\}, \{5,7\}, \{3,5,7\} \}$
+\end{answerlong}
+%------------------------------------------------------------------------------
+For the next few questions, let $X, Y, Z$ be sets (in the same universe).
+
+\nextq
+\tf: $X \cup Y = Y \cup X$
+\dotfill\answerbox{T}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf: $X \cup (Y \cap Z) = (X \cup Y) \cap Z$.
+\dotfill\answerbox{F}
+\\
+If F, provide a counterexample
+\begin{answerlong}
+$X = \{ 1 ,2\}$, $Y = \{ 2,3 \}$, $Z = \{ 3,4 \}$
+
+$X \cup (Y \cap Z) = \{1,2,3\}$ 
+$(X \cup Y) \cap Z = \{3\}$
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf: If $X \neq \emptyset$ and $Y \neq \emptyset$, then 
+$X \cup Y \neq \emptyset$.
+\dotfill\answerbox{T}
+\\
+If F, provide a counterexample
+\begin{answerlong}
+
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf: If $X \neq \emptyset$ and $Y \neq \emptyset$, then 
+$X \cap Y \neq \emptyset$.
+\dotfill\answerbox{F}
+\\
+If F, provide a counterexample
+\begin{answerlong}
+$X = \{ 1 \}$, $Y = \{ 2 \}$.  $then X \cap Y = \emptyset$
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf: $\emptyset \subseteq X$ for any set $X$.
+\dotfill\answerbox{T}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf: $\emptyset \in X$ for any set $X$.
+\dotfill\answerbox{F}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf: $\emptyset \times X = \emptyset$
+\dotfill\answerbox{T}
+
+%------------------------------------------------------------------------------
+\nextq
+Find the simplest set $X$ and $Y$ such that $X \in Y$
+and $X \subseteq Y$.
+\begin{answerlong}
+$X = \{ 1 \}$, $Y = \{ 1,2 \}$.
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf: $P(\emptyset) = \emptyset$
+\dotfill\answerbox{T}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf: $X \subseteq Y \implies P(X) \subseteq P(Y)$.
+\dotfill\answerbox{T}
+\\
+If F, provide a counterexample
+\begin{answerlong}
+
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf: $P(X \cup Y) = P(X) \cup P(Y)$.
+\dotfill\answerbox{F}
+\\
+If F, provide a counterexample
+\begin{answerlong}
+$X = \{1\}, Y = \{2\}, P(X \cup Y) = \{\emptyset, \{1\}, \{2\}, \{1,2\} \}$
+$P(X) \cup P(Y) = \{\emptyset, \{1\}, \{2\}\}$
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf: $P(X \cap Y) = P(X) \cap P(Y)$.
+\dotfill\answerbox{T}
+\\
+If F, provide a counterexample
+\begin{answerlong}
+
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf: $P(X \times Y) = P(X) \times P(Y)$.
+\dotfill\answerbox{}
+\\
+If F, provide a counterexample
+\begin{answerlong}
+
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+Hans Solo and Luke Skywalker are leading a team of 10 to attack
+an AT-AT and some stormtroopers. (The 10 includes Hans and Luke.)
+They have decided to split into two teams.
+The team attacking the AT-AT will have at least 2 members.
+How many ways are there to form such a team?
+(Explain your work with complete sentences.)
+\begin{answerlong}
+
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf. It is possible to construct sets $W$, $X$, $Y$, $Z$ such that
+\[
+|W \cap X| = |X \cap Y| = |Y \cap Z| = |Z \cap W| = 2
+\]
+and
+\[
+|W \cap X \cap Y| = |X \cap Y \cap Z| = |Y \cap Z \cap W| = |Z \cap W \cap X| = 0
+\]
+\dotfill\answerbox{T}
+\\
+If your answer is T, provide the simplest possible example.
+\begin{answerlong}
+
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf. It is possible to construct sets $W$, $X$, $Y$, $Z$ such that
+\[
+|W \cap X| = |X \cap Y| = |Y \cap Z| = |Z \cap W| = 2
+\]
+and
+\[
+|W \cap X \cap Y| = |X \cap Y \cap Z| = |Y \cap Z \cap W| = |Z \cap W \cap X| = 1
+\]
+\dotfill\answerbox{T}
+\\
+If your answer is T, provide the simplest possible example.
+\begin{answerlong}
+
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf: It is possible find a set $X$ and a function $f : X \rightarrow X$
+such that $|X| = 4$, $|f(X)| = 3$, $|f(f(X)| = 2$, $|f(f(f(X)))| = 1$
+\dotfill\answerbox{}
+\\
+If your answer is T, provide the simplest possible example.
+\begin{answerlong}
+
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf:
+If $f : X \rightarrow Y$ and $g: Y \rightarrow Z$ are onto (i.e., surjective)
+functions, then $g \circ f: X \rightarrow Z$ is also onto.
+\dotfill\answerbox{}
+\\
+If F, provide a counterexample.
+\begin{answerlong}
+
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf:
+If $f : X \rightarrow Y$ and $g: Y \rightarrow Z$ are 1--1 
+(i.e., injective)
+functions, then $g \circ f: X \rightarrow Z$ is also 1--1.
+\dotfill\answerbox{}
+\\
+If F, provide a counterexample.
+\begin{answerlong}
+
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf:
+Let $f : X \rightarrow Y$ and $g: Y \rightarrow Z$ be functions.
+If $f$ is onto and $g$ is not onto, then $g \circ f$ is onto.
+\dotfill\answerbox{}
+\\
+If F, provide a counterexample.
+\begin{answerlong}
+
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf:
+Let $f : X \rightarrow Y$ and $g: Y \rightarrow Z$ be functions.
+If $f$ is not onto and $g$ is onto, then $g \circ f$ is not onto.
+\dotfill\answerbox{}
+\\
+If F, provide a counterexample
+\begin{answerlong}
+
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf:
+Let $f : X \rightarrow Y$ and $g: Y \rightarrow Z$ be functions.
+If $f$ is 1--1 and $g$ is not 1--1, then $g \circ f$ is 1--1.
+\dotfill\answerbox{}
+\\
+If F, provide a counterexample
+\begin{answerlong}
+
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+\tf:
+Let $f : X \rightarrow Y$ and $g: Y \rightarrow Z$ be functions.
+If $f$ is not 1--1 and $g$ is 1--1, then $g \circ f$ is 1--1.
+\dotfill\answerbox{}
+\\
+If F, provide a counterexample
+\begin{answerlong}
+
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+Find sets $X$ and $Y$ such that 
+$X$ and $Y$ are countable and $X - Y$ is $\emptyset$.
+\begin{answerlong}
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+Given any positive integer $n$,
+find sets $X$ and $Y$ such that 
+$X$ and $Y$ are countable and $|X - Y| = n$.
+\begin{answerlong}
+
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+Find countable sets $X$ and $Y$ such that $X - Y$ is
+infinite and countable.
+\begin{answerlong}
+The set X is Natural Numbers and Set Y is all positive Even Numbers, 
+then, (X - Y) = N - E+ = Positive Odd Integers, which is infinite and countable.
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+Compute the following matrix product:
+\[
+\begin{bmatrix}
+1 & 2 \\
+3 & 4 
+\end{bmatrix}
+\begin{bmatrix}
+4 & 3 \\
+2 & 1 
+\end{bmatrix}
+=
+\begin{bmatrix}
+\answerbox{} & \answerbox{} \\
+\answerbox{} & \answerbox{}
+\end{bmatrix}
+\]
+
+%------------------------------------------------------------------------------
+\nextq
+Find
+a matrix $M$ 
+with only 0s and 1s for entry
+such that $M^2 =
+\begin{bmatrix}
+1 & 0 \\
+0 & 1 
+\end{bmatrix}
+$
+\[
+M = 
+\begin{bmatrix}
+\answerbox{} & \answerbox{} \\
+\answerbox{} & \answerbox{}
+\end{bmatrix}
+\]
+(Hint: $M$ is made up of only 0s and 1s.)
+%------------------------------------------------------------------------------
+\newpage
+\input{instructions.tex}
+\end{document}
