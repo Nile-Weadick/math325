@@ -1,0 +1,196 @@
+\input{thispreamble.tex}
+
+\renewcommand\AUTHOR{nweadick1@cougars.ccis.edu} % CHANGE TO YOURS
+
+\begin{document}
+\topmattertwo
+
+In \LaTeX\, math notation is enclosed by the \verb!$! symbols.
+For instance \verb!$x = a_{1} + b^{2}$! gives you $x = a_{1} + b^{2}$.
+For emphasis you can write also write it as
+\verb!\[ x = a_{1} + b^{2} \]!
+to center your math:
+\[
+x = a_{1} + b^{2}
+\]
+For more information about \LaTeX\, go to my
+website
+\href{http://bit.ly/yliow0}{http://bit.ly/yliow0},
+click on \verb!Yes!
+you are one of my students,
+then look for
+\href{https://drive.google.com/file/d/0BzjYrK0VFuMWZm5xV0kyR3J2Zm8/view?usp=sharing}{latex.pdf}.)
+
+%------------------------------------------------------------------------------
+\newpage
+\textsc{Example.}
+Prove that
+\begin{enumerate}[nosep]
+\item[(a)] Reflexive: $|X| = |X|$
+\item[(b)] Symmetric: If $|X| = |Y|$, then $|Y| = |X|$.
+\item[(c)] Transitive: If $|X| \leq |Y|$ and $|Y| \leq |Z|$, then
+$|X| \leq |Z|$.
+\end{enumerate}
+
+Recall the following definitions:
+$|X| \leq |Y|$ means there is a 1--1 function $X \rightarrow Y$
+and $|X| = |Y|$ means there there is a 1--1 and onto function $X \rightarrow Y$.
+
+\SOLUTION
+
+(a)
+
+Let $X$ be a set and a function, s.t $f:X \rightarrow X$
+$f(x)=x$, where $x$ is an element of $X$
+$f$ is a 1-1 and onto function. 
+since $x,x'$ are elements of $X$
+$f(x) = f(x')$ implies $x=x'$
+
+Therefore, $|X| = |X|$
+
+(b) 
+
+Let $f:X \rightarrow Y$ that is 1-1 and onto. Since $f$ is bijective it has an inverse function.
+$f^-1: Y \rightarrow X$ , which is 1-1 and onto. 
+
+Therefore, if $|X| = |Y|$ then, $|Y| = |X|$
+
+(c)
+
+Let $f:X \rightarrow Y$ that is 1-1 and $g:Y \rightarrow Z$ which is 1-1. and $h:X \rightarrow Z$.
+then the composite function $gof$ = $h:X \rightarrow Z$
+
+Therefore, If $|X| \leq |Y|$ and $|Y| \leq |Z|$, then $|X| \leq |Z|$.
+
+
+
+
+
+\input{example.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 2.5, question 18.
+
+Prove that for sets $A$ and $B$, if $|A| = |B|$, then $|P(A)| = |P(B)|$.
+
+\textsc{Warning:} $A$ and $B$ need not be finite.
+
+\SOLUTION
+
+Let $f: A \rightarrow B$ which is 1-1. Since $|A| = |B|$ have the same cardinality, they will have the same number of subsets.
+
+Therefore, if $|A| = |B|$, then $|P(A)| = |P(B)|$
+
+\input{2-5-18.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 2.5, question 27.
+
+Prove that the union of countably many countable sets is countable.
+      
+Let me explain what the question is asking.
+Note that you already know what
+is a \textit{countable set} -- it's a set $X$ such that $X$ is finite, say
+$|X| = |\{1, 2, 3, ..., n\}|$, or $|X| = |\N|$.
+And a union \textit{countably many sets} means you are trying to
+compute the union of of a collection of sets and this \textit{collection} is
+countable.
+This means that you can label the sets of the collection in a countable way.
+So either
+(a) there is a finite number of sets (say $n$ of them) and the union is
+\[
+A_1 \cup A_2 \cup \cdots A_n = \bigcup_{i \in \{1, 2, 3, \cdots n\}} A_i
+\]
+i.e., the collection of sets $\{A_1, A_2 ..., A_n\}$ is finite
+or
+(b) there is infinitely countable number of sets and the union is
+\[
+A_1 \cup A_2 \cup \cdots = \bigcup_{i \in \N} A_i
+\]
+i.e., the collection of sets $\{A_1, A_2 ..., \}$ is infinitely countable.
+An example of a uncountable union is when you can label the sets with $\R$.
+For instance for each $x \in \R$, let $A_x = [x-1, x+1)$ and then you take
+\[
+\bigcup_{x \in \R} A_x
+\]
+Something like $\bigcup_{x \in [0,1)} A_x$ is also an uncountable union.
+Therefore you need to prove this:
+(a) If $\{A_1, A_2, ..., A_n\}$ is countable and each $A_i$ is countable, then
+$\bigcup_{i \in \{1, 2, 3, \cdots n\}} A_i$ is also countable and
+(b) If $\{A_1, A_2, ...\}$ is countable and each $A_i$ is countable, then
+$\bigcup_{i \in \N} A_i$ is also countable.
+
+Remember: \lq\lq countable" means (a) finite or (b) countably infinite.
+
+\textsc{Note:} The solution is provided in the textbook.
+Study the solution carefully and write it in your own words.
+The solutions at the back of the textbook is usually very brief and
+sometimes require clarifications and filling in some details.
+Even better: See if you can prove it in a different, simpler, and clearer way.
+Yes, there's a simpler proof that uses a proof that I talked about in class
+for another theorem.
+That's why studying and understanding proofs are important. 
+
+\SOLUTION
+
+Let the set of size $n$ s.t $X = \{x1,x2,...,xn\}$ and another set of size $n$ s.t $Y = \{y1,y2,...,yn\}$
+
+You can construct such as set $ X \cup Y = \{x1,y1,x2,y2,...,xn,yn\}$ which is countable.
+
+\input{2-5-27.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 2.5, question 37.
+
+Prove that there are countably many programs that can be written in a
+particular programming language.
+
+(The proof is exactly the same if you change the questions to \lq\lq prove
+that there are countable many novels that can be written in a particular
+alphabetic language".)
+
+\textsc{Note:} The solution is provided in the textbook.
+Study the solution carefully and write it in your own words.
+See if you can find a simpler adn clearer proof.
+
+\SOLUTION
+
+\input{2-5-37.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 2.5, question 38 (modified).
+
+Prove that there are uncountably many functions from $\N$ to $\{ 0, 1 \}$.
+
+Note: The previous questions says that there are \textit{countably}
+many C++ programs.
+This questions says that there are \textit{uncountably} many boolean functions
+$\N \rightarrow \{0,1\}$ is uncountable.
+I'll let you think about the (computer science/mathematical/engineering) consequence of these two statements.
+
+\SOLUTION
+
+\input{2-5-38.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\textsc{Spoilers}
+
+Here's an important hint:
+There are two extremely important proof techniques when it comes to
+the size of infinite sets:
+the zigzag argument (I used this to prove $|\N| = |\Q|$)
+and Cantor's diagonalization argument (I used this to prove $|\N| < |\R|$,
+i.e., $\R$ is not countable).
+Both methods can be used in this assignment, i.e.,
+one method can be used in one of the three questions
+and the other can be used in another question.
+
+%------------------------------------------------------------------------------
+\newpage
+\input{instructions.tex}
+\end{document}
