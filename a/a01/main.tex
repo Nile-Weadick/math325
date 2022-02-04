@@ -60,6 +60,8 @@ Therefore, if $|X| = |Y|$ then, $|Y| = |X|$
 Let $f:X \rightarrow Y$ that is 1-1 and $g:Y \rightarrow Z$ which is 1-1. and $h:X \rightarrow Z$.
 then the composite function $gof$ = $h:X \rightarrow Z$
 
+Since, this is a composite funct of two 1-1 functions then the composite is 1-1
+
 Therefore, If $|X| \leq |Y|$ and $|Y| \leq |Z|$, then $|X| \leq |Z|$.
 
 
@@ -78,7 +80,13 @@ Prove that for sets $A$ and $B$, if $|A| = |B|$, then $|P(A)| = |P(B)|$.
 
 \SOLUTION
 
-Let $f: A \rightarrow B$ which is 1-1. Since $|A| = |B|$ have the same cardinality, they will have the same number of subsets.
+Let $f: A \rightarrow B$ which is 1-1 and onto. 
+
+Let $g: P(A) \rightarrow P(B)$
+
+let $g$ be defined as $g(X) = f(X)$ 
+
+Now, for all $X \subseteq A$, that is 1-1 and onto.
 
 Therefore, if $|A| = |B|$, then $|P(A)| = |P(B)|$
 
@@ -135,9 +143,24 @@ That's why studying and understanding proofs are important.
 
 \SOLUTION
 
-Let the set of size $n$ s.t $X = \{x1,x2,...,xn\}$ and another set of size $n$ s.t $Y = \{y1,y2,...,yn\}$
+Let there be countably many countable sets. s.t A1, A2, A3,....
 
-You can construct such as set $ X \cup Y = \{x1,y1,x2,y2,...,xn,yn\}$ which is countable.
+$ A1 = \{a11,a12,a13,...\}$
+
+$ A2 = \{a21,a22,a23,...\}$
+
+$ A3 = \{a31,a32,a33,...\}$
+
+You can construst such a set.
+
+That the element can be listed $\{ai1,ai2,ai3,...\}$
+
+$\bigcup_{i=1} A_i$ 
+
+The elements can be listed aij with i + j = 2, then all terms aij
+with i + j = 3, then all terms aij with i + j = 4\dots
+
+Therefore, the union of countably many countable sets is countable.
 
 \input{2-5-27.tex}
 
@@ -158,6 +181,13 @@ See if you can find a simpler adn clearer proof.
 
 \SOLUTION
 
+There is number of potential strings for a finate alphabet. The number of strings is length n and n is positive.
+Now, for a particular programming language there countab many program. We can say that since the set
+ all programs would be a subset of all strings of a finite alphabet, which is countable.
+Then, the set of all programs must be countable since it is a subset of a countable set. 
+
+Therefore, there are countably many programs that can be written in a particular
+programming language.
 \input{2-5-37.tex}
 
 %------------------------------------------------------------------------------
@@ -173,6 +203,25 @@ $\N \rightarrow \{0,1\}$ is uncountable.
 I'll let you think about the (computer science/mathematical/engineering) consequence of these two statements.
 
 \SOLUTION
+
+To Prove that there are uncountably many functions from N to \{0, 1\}. 
+I will suppose that there are countably many functions from N to \{0, 1\}.
+and arrive at a contradiction. 
+
+Assume, all the possible functions can be listed f1,f2,f3,\dots
+
+We can form a new function that adds a rule changes what zero gets mapped to of any function.
+Which creates a new function. If the element is mapped to 0 then map it to 1. 
+If the element is mapped to 1 then map it 0. This can be applied to any element of the set $\N$.
+This is a contradiction because you for any functon you can a single 
+elemets map and get a new function. 
+
+Therfore, here are uncountably many functions from $\N$ to $\{ 0, 1 \}$.
+
+
+
+
+
 
 \input{2-5-38.tex}
 
