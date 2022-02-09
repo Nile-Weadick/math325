@@ -1,0 +1,253 @@
+
+\input{thispreamble.tex}
+
+\renewcommand\AUTHOR{nweadick1@cougars.ccis.edu} % CHANGE TO YOURS
+
+\begin{document}
+\topmattertwo
+
+\textsc{Objectives}
+\begin{enumerate}
+\item Solve counting problems using principle of
+inclusion-exclution.
+\end{enumerate}
+\vspace{1cm}
+
+The following are practice problems for self-study:
+\begin{enumerate}[nosep]
+\li Rosen 8th edition, section 8.5: Odd numbered problems 1-23.
+Solution of questions 1-11,13,15 are included.
+\end{enumerate}
+For this assignment the problems you need to solve are
+\begin{enumerate}[nosep]
+\li Rosen 8th edition, section 8.5: \underline{questions 12, 14, 16}.
+\end{enumerate}
+Explain your work completely using the solutions provided as
+guide and examples on how to write math properly.
+
+In \LaTeX\, math notation is enclosed by the \verb!$! symbols.
+For instance \verb!$x = a_{1} + b^{2}$! gives you $x = a_{1} + b^{2}$.
+For emphasis you can write also write it as
+\verb!\[ x = a_{1} + b^{2} \]!
+to center your math:
+\[
+x = a_{1} + b^{2}
+\]
+For binomial coefficients, \verb!$\binom{5}{2}$! will give you 
+$\binom{5}{2}$.
+You can also look at the solutions, find something that you can use,
+copy-and-paste, and modify.
+
+For more information about \LaTeX\, go to my
+website
+\href{http://bit.ly/yliow0}{http://bit.ly/yliow0},
+click on \verb!Yes!
+you are one of my students,
+then look for
+\href{https://drive.google.com/file/d/0BzjYrK0VFuMWZm5xV0kyR3J2Zm8/view?usp=sharing}{latex.pdf}.)
+Even easier: ask questions in CCCS discord.
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.5, question 1.
+
+\SOLUTION
+
+\input{08-05-01.tex}
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.5, question 2.
+
+\SOLUTION
+
+\input{08-05-02.tex}
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.5, question 3.
+
+\SOLUTION
+
+\input{08-05-03.tex}
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.5, question 4.
+
+\SOLUTION
+
+\input{08-05-04.tex}
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.5, question 5.
+
+\SOLUTION
+
+\input{08-05-05.tex}
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.5, question 6.
+
+\SOLUTION
+
+\input{08-05-06.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.5, question 7.
+
+\SOLUTION
+
+\input{08-05-07.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.5, question 8.
+
+\SOLUTION
+
+\input{08-05-08.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.5, question 9.
+
+\SOLUTION
+
+\input{08-05-09.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.5, question 10.
+
+\SOLUTION
+
+\input{08-05-10.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.5, question 11.
+
+\SOLUTION
+
+\input{08-05-11.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.5, question 12.
+
+\SOLUTION
+Find the number of positive integers not exceeding
+10,000 that are not divisible by 3, 4, 7, or 11.
+
+Let there be four sets A,B,C,D.
+
+$|A| = \floor{\frac{10000}{3}}$, $|B| = \floor{\frac{10000}{4}}$,
+$|C| = \floor{\frac{10000}{7}}$,$|D| = \floor{\frac{10000}{11}}$,
+
+$|A \cap B| = \floor{\frac{10000}{3 \cdot 4}}$,$|A \cap C| = \floor{\frac{10000}{3 \cdot 7}}$,$|A \cap D| = \floor{\frac{10000}{3 \cdot 11}}$,
+$|B \cap C| = \floor{\frac{10000}{4 \cdot 7}}$,$|B \cap D| = \floor{\frac{10000}{4 \cdot 11}}$,$|C \cap D| = \floor{\frac{10000}{7 \cdot 11}}$,
+
+$|A \cap B \cap C| = \floor{\frac{10000}{3 \cdot 4 \cdot 7}}$,$|A \cap B \cap D| = \floor{\frac{10000}{3 \cdot 4 \cdot 11}}$,$|B \cap C \cap D| = \floor{\frac{10000}{4 \cdot 7 \cdot 11}}$,
+
+$|A \cap B \cap C \cap D| = \floor{\frac{10000}{3 \cdot 4 \cdot 7 \cdot 11}}$
+
+Now, PIE.
+
+$|A \cup B \cup C \cup D| = |A| + |B| + |C| + |D|$
+
+$- (|A \cap B| + |A \cap C| + |A \cap D| + |B \cap C| + |B \cap D| + |C \cap D|$
+
+$+ (|A \cap B \cap C| + |A \cap B \cap D| + |B \cap C \cap D|$
+
+$- |A \cap B \cap C \cap D|$
+
+$(3333 + 2500 + 1428 + 909) = 8170$
+
+$-(833 + 476 + 303 + 357 + 227 + 129) = 2325$
+
+$+(119 + 312 + 32) = 463$
+
+$-(10)$
+
+$10000 - 6298 = 3702$
+\answerbox{3702}
+\input{08-05-12.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.5, question 13.
+
+\SOLUTION
+
+\input{08-05-13.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.5, question 14.
+
+\SOLUTION
+
+Find the number of positive integers not exceeding 1000
+that are either the square or the cube of an integer.
+
+Let there be two sets A,B
+
+$|A| = \sqrt{1000}$, $|B| = \sqrt[3]{1000}$
+
+$|A| = \floor{\sqrt{1000}} = 31$
+
+$|B| = \floor{\sqrt[3]{1000}} = 10$
+
+$|A \cap B| = \floor{\sqrt[3]{\sqrt{1000}}} = 3$
+
+Now PIE,
+
+$|A \cup B| = |A| + |B| - |A \cap B|$
+
+$31 + 10 - 3 = 38$
+
+\answerbox{38}
+
+\input{08-05-14.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.5, question 15.
+
+\SOLUTION
+
+\input{08-05-15.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.5, question 16.
+
+\SOLUTION
+How many permutations of the 26 letters of the English
+alphabet do not contain any of the strings fish,rat or bird?
+
+There are a total of 26! strings in all.
+
+There are 23! strings that contain fish.
+
+There are 24! strings that contain rat.
+
+There are 23! strings that contain bird.
+
+There are 21! strings that contain both fish and rat.
+
+There no strings that contain rat and bird, due to the "r". 
+
+Now PIE,
+
+$26! - (23! + 24! + 23!) + (21!) $
+
+\answerbox{$26! - (23! + 24! + 23!) + (21!)$}
+
+
+\input{08-05-16.tex}
+
+%------------------------------------------------------------------------------
+
+\newpage
+\input{instructions.tex}
+\end{document}

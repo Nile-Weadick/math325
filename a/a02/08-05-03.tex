@@ -1,0 +1,41 @@
+Let
+\begin{align*}
+U &= \text{set of households in the survey} \\
+T &= \{x \in U \mid x \text{ has at least one TV} \} \\
+P &= \{x \in U \mid x \text{ has telephone service} \} 
+\end{align*}
+We are given
+\begin{align*}
+\frac{|T|}{|U|} &= 0.96 \\
+\frac{|P|}{|U|} &= 0.98 \\
+\frac{|T \cap P|}{|U|} &= 0.95 \\
+\end{align*}
+The required number is $|U - (T \cup P)|/|U|$.
+Note that 
+\begin{align*}
+\frac{|U - (T \cup P)|}{|U|}
+= \frac{|U|}{|U|} - \frac{|T \cup P|}{|U|} = 1 - \frac{|T \cup P|}{|U|} 
+\end{align*}
+The principle of inclusion-exclusion states
+\[
+|T \cup P| = |T| + |P| - |T \cap P|
+\]
+Therefore
+\[
+\frac{|T \cup P|}{|U|} = \frac{|T|}{|U|} + \frac{|P|}{|U|} 
+- \frac{|T \cap P|}{|U|} 
+= 0.96 + 0.98 - 0.95 = 0.99
+\]
+Hence the required number is 
+\[
+\frac{|U - (T \cup P)|}{|U|}
+= 1 - \frac{|T \cup P|}{|U|} 
+= 1 - 0.99 = 0.01
+\]
+
+ANSWER:
+\answerbox{0.01}
+
+\qed
+
+

@@ -1,0 +1,61 @@
+We are given
+\begin{align*}
+|A_1| &= 100 \\
+|A_2| &= 1000 \\
+|A_3| &= 10000
+\end{align*}
+The principle of inclusion-exclusion states
+\begin{align*}
+|A_1 \cup A_2 \cup A_3| &= |A_1| + |A_2| + |A_3| \\ 
+                       & \hspace{0.5cm} 
+                         - \left( |A_1 \cap A_2| + |A_1 \cap A_3| + |A_2 \cap A_3| \right) \\
+                       & \hspace{0.5cm} + |A_1 \cap A_2 \cap A_3|
+\end{align*}
+
+
+(a)
+With the assumption $A_1 \subseteq A_2 \subseteq A_3$, we have
+\begin{align*}
+A_1 \cap A_2          &= A_1 \\
+A_1 \cap A_3          &= A_1 \\
+A_2 \cap A_3          &= A_2 \\
+A_1 \cap A_2 \cap A_3 &= A_1
+\end{align*}
+From the principle of inclusion-exclusion, we obtain
+\begin{align*}
+|A_1 \cup A_2 \cup A_3|
+&= |A_1| + |A_2| + |A_3| - \left( |A_1| + |A_1| + |A_2| \right) + |A_1| \\
+&= 100 + 1000 + 10000 - (100 + 100 + 1000) + 100 \\
+&= 10000
+\end{align*}
+ANSWER:
+\answerbox{10000}
+
+
+(b) If the sets of pairwise disjoint,
+\[
+|A_1 \cap A_2| = |A_1 \cap A_3| = |A_2 \cap A_3| = |A_1 \cap A_2 \cap A_3| = 0
+\]
+From the principle of inclusion-exclusion, we obtain
+\begin{align*}
+|A_1 \cup A_2 \cup A_3| &= 100 + 1000 + 10000 - (0 + 0 + 0) + 0 \\
+                        &= 11100
+\end{align*}
+ANSWER:
+\answerbox{11100}
+
+
+(c) We have
+\begin{align*}
+|A_1 \cap A_2|          &= |A_1 \cap A_3| = |A_2 \cap A_3| = 2 \\ 
+|A_1 \cap A_2 \cap A_3| &= 1
+\end{align*}
+From the principle of inclusion-exclusion, we obtain
+\begin{align*}
+|A_1 \cup A_2 \cup A_3| &= 100 + 1000 + 10000 - (2 + 2 + 2) + 1 \\
+                        &= 11095
+\end{align*}
+ANSWER:
+\answerbox{11095}
+
+\qed

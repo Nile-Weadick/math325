@@ -1,0 +1,50 @@
+Let 
+\begin{align*}
+U &= \{ 1, 2, 3, \ldots, 1000 \} \\
+A_1 &= \{x \in U \mid x \text{ is divisible by 5} \} \\
+A_2 &= \{x \in U \mid x \text{ is divisible by 7} \}
+\end{align*}
+The required number is $|U - (A_1 \cup A_2)|$.
+Note that 
+\begin{align*}
+|U| &= 1000 \\
+|A_1| &= \floor{ \frac{1000}{5} } = 200\\
+|A_2| &= \floor{ \frac{1000}{7} } = 142\\
+|A_1 \cap A_2| &= \{x \in U \mid x \text{ is divisible by 35} \} = \floor{ \frac{1000}{35} } = 28 
+\end{align*}
+By the principle of inclusion-exclusion, we have
+\begin{align*}
+|A_1 \cup A_2| 
+&= |A_1| + |A_2| - |A_1 \cap A_2| \\
+&= 200 + 142 - 28 \\
+&= 314
+\end{align*}
+Therefore the required number is $|U - (A_1 \cup A_2)| = 1000 - 314 
+= 686$.
+
+ANSWER:
+\answerbox{686}
+
+\qed
+\\
+
+\textsc{Note.}
+Of course since the numbers are so small, you should quickly
+check this with some programming language:
+\begin{console}[fontsize=\footnotesize]
+>>> count = 0
+>>> for i in range(1, 1001):
+...     if i % 5 is not 0 and i % 7 is not 0:
+...         count += 1
+... 
+>>> print(count)
+686
+>>> 
+\end{console}
+
+\textsc{Note.}
+Note that for an integer $n$, $n$ is divisible by $k$ and $\ell$
+iff $n$ is divisible by 
+\[
+\frac{k \ell}{\gcd(k, \ell)}
+\]

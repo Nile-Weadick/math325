@@ -1,0 +1,70 @@
+Let 
+\begin{align*}
+U &= \{1, 2, 3, ..., 100\} \\
+A &= \{x \in U \mid x \text{ is odd}\} \\
+B &= \{x \in U \mid x \text{ is square}\} \\
+\end{align*}
+The required number is $|A \cup B|$.
+The principle of inclusion-exclusion states
+\[
+|A \cup B| = |A| + |B| - |A \cup B|
+\]
+
+The number of integers in $U$ which are even is 
+$\floor{\frac{100}{2}} = 50$.
+Therefore 
+\[
+|A| = |U| - 50 = 50
+\]
+The squares in $B$ are $1^2, 2^2, 3^2, 4^2, 5^2, 6^2, 7^2, 8^2, 9^2, 10^2$.
+Therefore $|B| = 10$.
+(In general, the number of squares in 1, 2, 3, ..., $n$ is
+$\floor{\sqrt{n}}$.)
+Furthmoremore, the integers in 
+$1^2$, $2^2$, $3^3$, $4^2$, $5^2$, $6^2$, $7^2$, $8^2$
+$9^2$, $10^2$ which are odd are $1^1, 3^2, 5^2, 7^2, 9^2$.
+Therefore 
+\[
+|A \cap B| = 5
+\]
+
+Therefore
+\[
+|A \cup B|
+= |A| + |B| - |A \cap B| = 50 + 10 - 5 = 55
+\]
+Hence the required number is 55.
+
+ANSWER:
+\answerbox{55}
+
+\qed
+
+
+
+\textsc{Note.} This is easy to check with a program:
+\begin{console}
+import math
+
+def is_square(n):
+    x = int(math.sqrt(n))
+    # test x + 1 in case of rounding errors
+    return x ** 2 == n or (x + 1) ** 2 == n
+
+count = 0
+for i in range(1, 101):
+    if i % 2 == 1 or is_square(i):
+        count += 1
+
+print count
+\end{console}
+The output is 55.
+
+\textsc{Note.} Change the 100 to $N^2$ where $N$ is a positive integer.
+Solve the problem.
+Substitute 100 for $N$ in your solution and you should get 55.
+
+\textsc{Question.}
+Let $k > 0$ be an integer.
+Why is the number of $k$--powers in $\{1, 2, 3, ..., N\}$
+given $\floor{N^{1/k}}$?

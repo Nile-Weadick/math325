@@ -1,0 +1,40 @@
+Let
+\begin{align*}
+U &= \text{set of college students in the survey} \\
+B &= \{ x \in U \mid x \text{ likes broccoli} \} \\
+C &= \{ x \in U \mid x \text{ likes cauliflower}  \} \\
+S &= \{ x \in U \mid x \text{ likes brussel sprouts} \}
+\end{align*}
+We are given 
+\begin{align*}
+|U| &= 270 \\
+|B| &= 94 \\
+|C| &= 58 \\
+|S| &= 64 \\
+|B \cap C| &= 22 \\
+|B \cap S| &= 26 \\
+|C \cap S| &= 28 \\
+|B \cap C \cap S| &= 14
+\end{align*}
+The required number is $|U - (B \cup C \cup S)|$.
+By the principle of inclusion-exclusion:
+\[
+|B \cup C \cup S| 
+= |B| + |C| + |S| - (|B \cap C| + |B \cap S| + |C \cap S|) 
++ |B \cap C \cap S| 
+\] 
+Therefore
+\[
+|B \cup C \cup S| 
+= 94 + 58 + 64 - (22 + 26 + 28) + 14 = 154
+\] 
+Hence the required number is
+\[ 
+|U - (B \cup C \cup S)| 
+= |U| - |B \cup C \cup S| = 170 - 154 = 16 
+\]
+
+ANSWER:
+\answerbox{16}
+
+\qed

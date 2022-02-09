@@ -1,0 +1,82 @@
+Let 
+\begin{align*}
+U &= \{ \text{bit string of length 8} \} \\
+A & = \{x \in U \mid x \text{ contains 6 consecutive 0s} \}
+\end{align*}
+The required number is $|U| - |A|$.
+
+A string in $A$ can be one of the three forms:
+It is either
+\[
+B = \{000000 x y \mid x, y \text{ are bits}\}
+\]
+or
+\[
+C = \{x 000000 y \mid x, y \text{ are bits}\}
+\]
+or
+\[
+D = \{x y 000000 \mid x, y \text{ are bits}\}
+\]
+Therefore $|A| = |B \cup C \cup D|$.
+By the principle of inclusion-exclusion, 
+\[
+|B \cup C \cup D|
+= |B| + |C| + |D| - (|B \cap C| + |B \cap D| + |C \cap D|) + |B \cap C \cap D|
+\]
+
+By the multiplcation principle, 
+$|B| = 2 \cdot 2 = 4$ since there are two ways to choose
+$x$ and two ways to choose $y$. 
+Likewise $|C| = |D| = 4$.
+
+Now note that 
+\[
+B \cap C = \{000000y \mid y \text{ is a bit}\}
+\]
+Therefore $|B \cap C| = 2$.
+Also, 
+\[
+C \cap D = \{x 0000000 \mid x \text{ is a bit}\}
+\]
+and therefore $|C \cap D| = 2$.
+However
+\[
+B \cap D = \{ 00000000 \}
+\]
+i.e., $|B \cap D| = 1$.
+We also have 
+\[
+B \cap C \cap D = \{00000000\}
+\]
+and therefore $|B \cap C \cap D| = 1$.
+
+Therefore
+\begin{align*}
+|B \cup C \cup D|
+&= |B| + |C| + |D| - (|B \cap C| + |B \cap D| + |C \cap D|) + |B \cap C \cap D|
+\\
+&= 4 + 4 + 4 - (2 + 2 + 1) + 1 \\
+&= 8
+\end{align*}
+
+Therefore 
+\[
+|U| - |A| = 256 - |B \cup C \cup D| = 256 - 8 = 248
+\]
+Hence the number of bit strings of length 8 that do not contain 
+6 consecutive 0s is 248.
+
+ANSWER:
+\answerbox{248}
+
+\qed
+
+
+\textsc{Question.}
+What is instead of 6 consecutive 0s, I change the problem to 5 consecutive 0s?
+
+\textsc{Question.}
+What if I want to count
+bit strings of length $n$ that does not contain
+$k$ consecutives 0s? 

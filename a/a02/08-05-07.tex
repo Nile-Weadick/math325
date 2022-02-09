@@ -1,0 +1,41 @@
+Let
+\begin{align*}
+U &= \text{set of all computer science students in the school } \\ 
+C &= \{ x \in U \mid x \text{ took C}\} \\ 
+L &= \{ x \in U \mid x \text{ took Linux}\} \\ 
+J &= \{ x \in U \mid x \text{ took Java}\} \\ 
+\end{align*}
+We are given
+\begin{align*}
+|U| &= 2504 \\
+|C| &= 345 \\
+|L| &= 999 \\
+|J| &= 1876 \\
+|C \cap L| &= 231 \\
+|J \cap L| &= 876 \\
+|C \cap J| &= 290 \\
+|C \cap J \cap L| &= 189 \\
+\end{align*}
+The required number is $|U - (C \cup J \cup L)|$.
+By the principle of inclusion-exclusion:
+\[
+|C \cup J \cup L| 
+= |C| + |J| + |L| - (|C \cap J| + |C \cap L| + |J \cap L|) 
++ |C \cap J \cap L| 
+\] 
+Therefore
+\[
+|C \cup J \cup L| 
+= 345 + 999 + 1876 - (231 + 876 + 290) + 189 = 2012
+\] 
+Hence the required number is
+\[ 
+|U - (C \cup J \cup L)| 
+= |U| - |C \cup J \cup L| = 2504 - 2012 = 492 
+\]
+
+ANSWER:
+\answerbox{492}
+
+\qed
+

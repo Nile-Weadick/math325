@@ -1,0 +1,65 @@
+(a) The principle of inclusion-exclusion states
+\begin{align*}
+|A_1 \cup A_2 \cup A_3|
+&= |A_1| + |A_2| + |A_3| \\
+& \hspace{0.5cm} 
+- \left( |A_1 \cap A_2| + |A_1 \cap A_3| + |A_2 \cap A_3| \right) \\
+& \hspace{0.5cm} + |A_1 \cap A_2 \cap A_3|
+\end{align*}
+If the sets are pairwise disjoint, then
+\[
+|A_1 \cap A_2| = |A_1 \cap A_3| = |A_2 \cap A_3| =
+|A_1 \cap A_2 \cap A_3| = 0
+\]
+Therefore
+\[
+|A_1 \cup A_2 \cup A_3|
+= 100 + 100 + 100 - (0 + 0 + 0) + 0 = 300
+\]
+
+ANSWER:
+\answerbox{300}
+
+
+(b)
+In this case we are given
+\begin{align*}
+|A_1 \cap A_2| &= |A_1 \cap A_3| = |A_2 \cap A_3| = 50 \\
+|A_1 \cap A_2 \cap A_3| &= 0 
+\end{align*}
+Therefore from the principle of inclusion-exclusion we obtain
+\begin{align*}
+|A_1 \cup A_2 \cup A_3|
+= 100 + 100 + 100 - (50 + 50 + 50) + 0 = 150
+\end{align*}
+
+ANSWER:
+\answerbox{150}
+
+
+(c)
+In this case we are given
+\begin{align*}
+|A_1 \cap A_2| &= |A_1 \cap A_3| = |A_2 \cap A_3| = 50 \\
+|A_1 \cap A_2 \cap A_3| &= 25 
+\end{align*}
+Therefore from the principle of inclusion-exclusion we obtain
+\begin{align*}
+|A_1 \cup A_2 \cup A_3|
+= 100 + 100 + 100 - (50 + 50 + 50) + 25 = 175
+\end{align*}
+
+ANSWER:
+\answerbox{175}
+
+
+(d) If all sets are equal, then $A_1 \cup A_2 \cup A_3 = A_1$.
+Hence
+\[
+|A_1 \cup A_2 \cup A_3| = |A_1| = 100
+\]
+
+ANSWER:
+\answerbox{100}
+
+\qed

@@ -1,0 +1,40 @@
+
+Let 
+\begin{align*}
+U &= \text{set of students in the college} \\
+C &= \{ x \in U \mid x \text{ is in calculus} \} \\
+D &= \{ x \in U \mid x \text{ is in discrete mathematics} \} \\
+S &= \{ x \in U \mid x \text{ is in data structures} \} \\
+P &= \{ x \in U \mid x \text{ is in programming languages} \} \\
+\end{align*}
+We are given
+\begin{align*}
+|C| &= 507 \\
+|D| &= 292 \\
+|S| &= 312 \\
+|P| &= 344 \\
+|C \cap S| &= 14 \\
+|C \cap P| &= 213 \\
+|D \cap S| &= 211 \\
+|D \cap P| &= 43 \\
+|C \cap D| &= 0 \\
+|S \cap P| &= 0 \\
+\end{align*}
+Note that the intersection of any 3 of the sets or all 4 sets must be empty.
+The required number is $|C \cup D \cup S \cup S \cup P|$.
+By the principle of inclusion-exclusion,
+\begin{align*}
+|C\cup D \cup S \cup P|
+&= |C| + |D| + |S| + |P| \\
+&\hspace{0.5cm} - (|C \cap D| + |C \cap S| + |C \cap P| + |D \cap S| + |D \cap P| + |S \cap P|) \\
+&\hspace{0.5cm} + (|C \cap D \cap S| + |C \cap D \cap P| + |C \cap S \cap P| + |D \cap S \cap P|) \\
+&\hspace{0.5cm} - |C \cap D \cap S \cap P| \\
+&= 507 + 292 + 312 + 344 - (14 + 213 + 211 + 43) + (0 + 0 + 0 + 0) - 0 \\
+&= 974
+\end{align*}
+
+ANSWER:
+\answerbox{974}
+
+\qed
+

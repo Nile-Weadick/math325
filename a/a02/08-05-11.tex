@@ -1,0 +1,52 @@
+
+Let
+\begin{align*}
+  U &= \{1, 2, 3, ..., 1000\} \\
+  A_1 &= \{x \in U \mid x \text{ divisible by 3} \} \\
+  A_2 &= \{x \in U \mid x \text{ divisible by 17} \} \\
+  A_3 &= \{x \in U \mid x \text{ divisible by 35} \} 
+\end{align*}
+The required number of $|U - (A_1 \cup A_2 \cup A_3)|$.
+Note that
+\begin{align*}
+  |U| &= 1000 \\
+  |A_1| &= \floor{ \frac{1000}{3} } = 333 \\
+  |A_2| &= \floor{ \frac{1000}{17} } = 58 \\
+  |A_3| &= \floor{ \frac{1000}{35} } = 28 \\
+  |A_1 \cap A_2| &= \{x \in U \mid x \text{ divisible by 3, 17}\} = \floor{\frac{1000}{3 \cdot 17}} = 19 \\
+  |A_1 \cap A_3| &= \{x \in U \mid x \text{ divisible by 3, 35}\} = \floor{\frac{1000}{3 \cdot 35}} = 9 \\
+  |A_2 \cap A_3| &= \{x \in U \mid x \text{ divisible by 17, 35}\} = \floor{\frac{1000}{17 \cdot 35}} = 1 \\
+  |A_1 \cap A_2 \cap A_3| &= \floor{ x \in U \mid x \text{ divisible by 3,17,35 }\} = \frac{1000}{3 \cdot 17 \cdot 35}} = 0 
+\end{align*}
+By the principle of inclusion-exclusion, we have
+\begin{align*}
+  | A_1 \cup A_2 \cup A_3 |
+  &= (|A_1| + |A_2| + |A_3|) - (|A_1 \cap A_2| + |A_1 \cap A_3| + |A_2 \cap A_3|) + |A_1 \cap A_2 \cap A_3| \\
+  &= (333 + 58 + 28) - (19 + 9 + 1) + 0 \\
+  &= 390
+\end{align*}
+Therefore
+\begin{align*}
+  | U -  A_1 \cup A_2 \cup A_3 |
+  = |U| -  |A_1 \cup A_2 \cup A_3|
+  = 1000 - 390
+  = 610
+\end{align*}
+
+  
+ANSWER:
+\answerbox{610}
+
+\qed
+
+\textsc{Note.}
+Here's a quick check:
+\begin{console}[fontsize=\footnotesize]
+>>> count = 0
+>>> for x in range(1, 1001):
+...     if x % 3 != 0 and x % 17 != 0 and x % 35 != 0:
+...         count += 1
+... 
+>>> print(count)
+610
+\end{console}
