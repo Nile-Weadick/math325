@@ -1,0 +1,333 @@
+\input{thispreamble.tex}
+
+\renewcommand\AUTHOR{nweadick1@cougars.ccis.edu} % CHANGE TO YOURS
+
+\begin{document}
+\topmattertwo
+
+\textsc{Objectives}
+\begin{enumerate}
+\item Solve counting problems using principle of
+inclusion-exclution.
+\end{enumerate}
+\vspace{1cm}
+
+
+
+The following are practice problems for self-study:
+\begin{enumerate}[nosep]
+\li Rosen 8th edition, section 8.6: Odd numbered problems 1-25 except 15.
+Solutions to many of the questions are included.
+23 was covered in class.
+Some questions (example 19, 24) are small theorems -- you are
+encourage to try them and talk to me if you have questions.
+\end{enumerate}
+For this assignment the problems you need to solve are
+\begin{enumerate}[nosep]
+\li Rosen 8th edition, section 8.6: \underline{questions 4, 6, 10, 17}.
+\end{enumerate}
+Explain your work completely using the solutions provided as
+guide and examples on how to write math properly.
+
+In \LaTeX\, math notation is enclosed by the \verb!$! symbols.
+For instance \verb!$x = a_{1} + b^{2}$! gives you $x = a_{1} + b^{2}$.
+For emphasis you can write also write it as
+\verb!\[ x = a_{1} + b^{2} \]!
+to center your math:
+\[
+x = a_{1} + b^{2}
+\]
+For binomial coefficients, \verb!$\binom{5}{2}$! will give you 
+$\binom{5}{2}$.
+You can also look at the solutions, find something that you can use,
+copy-and-paste, and modify.
+
+For more information about \LaTeX\, go to my
+website
+\href{http://bit.ly/yliow0}{http://bit.ly/yliow0},
+click on \verb!Yes!
+you are one of my students,
+then look for
+\href{https://drive.google.com/file/d/0BzjYrK0VFuMWZm5xV0kyR3J2Zm8/view?usp=sharing}{latex.pdf}.)
+Even easier: ask questions in CCCS discord.
+
+
+
+
+For each question in section 8.6,
+you must define your universe $U$ and
+the propositional formulas $P_1, P_2, P_3$.
+(Of course different problems have different numbers of
+propositional formulas; you might need more or less.) 
+You can use other subscripts such as $P_A, ...$
+if you find it easier to read the solution that way.
+
+After stating the above, you have to argue that the 
+required number is $N(P_1' P_2' P_3')$.
+In most cases, it should be obvious.
+If that's the case you just say
+\lq\lq The required number is clearly $N(P_1' P_2' P_3' ...)$''.
+In some cases it might not be clear.
+You h ave to judge for yourself.
+
+After stating the above, you must state the version of P.I.E. you are
+using. For instance you might want to say \lq\lq
+By the principle of inclusion-exclusion,
+\[
+N(P_1' P_2' P_3') = |U| - ...
+\]
+Do NOT use $U$ or $P_i$'s if it's not defined.
+
+After that you should compute the values $|U|$, $N(P_1)$, ..., $N(P_1P_2)$, ...
+If the computation of $N(P_2)$ is similar to $N(P_1)$, then 
+you may say \lq\lq Similarly $N(P_2) = ...$".
+For easy and straightforward cases (example: the number is something from
+Discrete I), you simply state the number. For instance:
+\lq\lq We have $|U| = 2^5$.'' or \lq\lq Clearly $|U| = 2^5$.''
+Learn to write \textit{full} sentences: 
+writing \lq\lq $|U| = 2^5$'' out of nowhere
+is very confusing and misleading.
+
+Again you do not need to show trivial computations.
+The general rule is this: 
+If the result is from Discrete I (or previous classes), then you can use the
+relevant formula right away without too much explanation.
+If a result you want to use is not from previous classes,
+then you need to explain how to change the computation to one
+involving previous results.
+
+Once all the quantities are stated/computated, you substitute
+them into the P.I.E. that you have stated.
+
+Finally state what you have found clearly.
+For instance you might want to say \lq\lq Therefore
+the number of students studying Biology and Physics is 115''.
+
+Draw a box around your final answer if the question required
+an explicit answer (i.e., if it's not a proof question).
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 1.
+
+\SOLUTION
+
+\input{08-06-01.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 2.
+
+\SOLUTION
+
+\input{08-06-02.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 3.
+
+\SOLUTION
+
+\input{08-06-03.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 4.
+
+\SOLUTION
+$ N = \binom{17+3}{17} = 1140$
+
+$N(P1) = number of solutions with x1 >= 4 = \binom{16}{13} = 560$
+
+$N(P2) = number of solutions with x2 >= 5 = \binom{15}{12} = 455$
+
+$N(P3) = number of solutions with x3 >= 6 = \binom{14}{11} = 364$
+
+$N(P4) = number of solutions with x4 >= 9 = \binom{11}{8} = 165$
+
+$N(P1P2) = \binom{11}{8} = 165$
+
+$N(P1P3) = \binom{10}{7} = 120$
+
+$N(P1P4) = \binom{7}{4} = 35$
+
+$N(P2P3) = \binom{9}{6} = 84$
+
+$N(P2P4) = \binom{6}{3} = 20$
+
+$N(P3P4) = \binom{4}{2} = 6$
+
+$N(P1P2P3) = \binom{4}{2} = 6$
+
+$N(P1P2P4) = 0$
+
+$N(P2P3P4) = 0$
+
+$N(P1P2P3P4) = 6$
+
+$1140 - (560+455+354+165) + (165+120+35+84+20+6) - 6$
+
+\answerbox{20}
+
+\input{08-06-04.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 5.
+
+\SOLUTION
+
+\input{08-06-05.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 6.
+
+An integer is called squarefree if it is not divisible by
+the square of a positive integer greater than 1. Find the
+number of squarefree positive integers less than 100.
+
+\SOLUTION
+
+$99$
+
+$- (\floor{\frac{99}{2^2}} + \floor{\frac{99}{3^2}} + \floor{\frac{99}{5^2}}+  \floor{\frac{99}{7^2}})$
+
+$+ \floor{\frac{99}{2^2 \cdot 3^2}}$
+
+$99 - (24 + 11 + 3 + 2) + (2)$
+
+\answerbox{61}
+
+\input{08-06-06.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 7.
+
+\SOLUTION
+
+\input{08-06-07.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 8.
+
+\SOLUTION
+
+\input{08-06-08.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 9.
+
+\SOLUTION
+
+\input{08-06-09.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 10.
+In how many ways can eight distinct balls be distributed
+into three distinct urns if each urn must contain at least
+one ball?
+
+$3^8 - (C\binom{3}{1} \cdot 2^8) + (C\binom{3}{2} \cdot 1^8)$
+
+\SOLUTION
+
+\input{08-06-10.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 11.
+
+\SOLUTION
+
+????
+%\input{08-06-11.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 12.
+
+\SOLUTION
+
+\input{08-06-12.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 13.
+
+\SOLUTION
+
+\input{08-06-13.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 14.
+
+\SOLUTION
+
+\input{08-06-14.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 15.
+
+\SOLUTION
+
+OMITTED SPRING2022
+%\input{08-06-15.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 16.
+
+\SOLUTION
+
+\input{08-06-16.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 17.
+
+(Show all work clearly.)
+
+How many ways can the digits 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 be
+arranged so that no even digit is in its original position?
+
+Digits {0,1,2,3,4,5,6,7,8,9} can be arranged 10! ways.
+
+There are 5 even numbers in the list.
+
+$10! - \binom{5}{1}9! + \binom{5}{2}8! - \binom{5}{3}7! + \binom{5}{4}6! -\binom{5}{5}5!$
+
+$3628800-181440+403200-50400+3600-120$
+
+\answerbox{2170680}
+
+\SOLUTION
+
+\input{08-06-17.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 22.
+
+\SOLUTION
+
+\input{08-06-22.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.6, question 23.
+
+\SOLUTION
+
+\input{08-06-23.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\input{instructions.tex}
+\end{document}

@@ -1,0 +1,103 @@
+
+Let $X = \{x_1, x_2, x_3, x_4, x_5, x_6, x_7\}$
+and $Y = \{y_1, y_2, y_3, y_4, y_5\}$.
+A function $f : X \rightarrow Y$ is onto if
+\begin{align*}
+& y_1 \text{ is in the image of $f$} \\
+& y_2 \text{ is in the image of $f$} \\
+& y_3 \text{ is in the image of $f$} \\
+& y_4 \text{ is in the image of $f$} \\
+& y_5 \text{ is in the image of $f$} 
+\end{align*}
+where the image of $f$ is the set of values attained by $f$, i.e.
+the image of $f$ is $\{f(x_1), \ldots, f(x_7)\}$.
+
+Define $U$ to be the set of all functions from $X$ to $Y$ and
+\begin{align*}
+P_1(f) = (y_1 \text{ is not in the image of $f$})  \\ 
+P_2(f) = (y_2 \text{ is not in the image of $f$})  \\
+P_3(f) = (y_3 \text{ is not in the image of $f$})  \\
+P_4(f) = (y_4 \text{ is not in the image of $f$})  \\
+P_5(f) = (y_5 \text{ is not in the image of $f$}) 
+\end{align*}
+Hence the required number is
+\[
+N(P_1' P_2' P_3' P_4' P_5')
+\]
+Note that $|U| = 5^7$.
+
+$N(P_i)$ is the set of functions from $X$ to $Y$ where $y_i$ is
+not in the image of the functions.
+The number of such functions is $4^7$ since, excluding $y_i$,
+there are 4 possible
+values for each of the $7$ values of $X$.
+
+$N(P_iP_j)$ (for $i < j$) 
+is the number of functions from $X$ to $Y$
+except that $y_i$ and $y_j$ are not in the image of the functions.
+This means that for each value of $X$, there are 3 possible values.
+Hence there are $3^7$ such functions.
+
+Arguing in the same manner, 
+\begin{align*}
+N(P_i P_j P_k) &= 2^7 \\
+N(P_i P_j P_k P_l) &= 1^7 \\
+N(P_1 P_2 P_3 P_4 P_5) &= 0^7 
+\end{align*}
+
+By the inclusion-exclusion principle, 
+\begin{align*}
+N(P_1' P_2' P_3' P_4' P_5')
+&= 5^7 
+ - \binom{5}{1} 4^7
+ + \binom{5}{2} 3^7
+ - \binom{5}{3} 2^7
+ + \binom{5}{4} 1^7
+ - \binom{5}{5} 0^7 \\
+&= 16800
+\end{align*}
+The required number is 16800.
+
+ANSWER:
+\answerbox{16800}
+\qed
+
+
+
+\vspace{1cm}
+\textsc{Note.} 
+Here's a quick check:
+\begin{Verbatim}[frame=single,fontsize=\footnotesize]
+>>> x1,x2,x3,x4,x5,x6,x7 = 1,2,3,4,5,6,7
+>>> y1,y2,y3,y4,y5 = 1,2,3,4,5
+>>> X = [x1,x2,x3,x4,x5]
+>>> X = [x1,x2,x3,x4,x5,x6,x7]
+>>> Y = [y1,y2,y3,y4,y5]
+>>> 5**7
+78125
+>>> fs = []
+>>> for a in Y:
+...     for b in Y:
+...         for c in Y:
+...             for d in Y:
+...                 for e in Y:
+...                     for f in Y:
+...                         for g in Y:
+...                             fn = [(x1,a),(x2,b),(x3,c),
+                                      (x4,d),(x5,e),(x6,f),(x7,g)]
+...                             fs.append(fn)
+... 
+>>> len(fs)
+78125
+>>> count = 0
+>>> for fn in fs:
+...     image = []
+...     for x,y in fn:
+...         if y not in image: image.append(y)
+...     image.sort()
+...     if image == Y: count += 1
+... 
+>>> print(count)
+16800
+>>> 
+\end{Verbatim}

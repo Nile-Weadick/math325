@@ -1,0 +1,47 @@
+
+[HINT: Let the 6 toys be $T = \{t_1, t_2, \ldots, t_6\}$ and 
+the three children be $C = \{c_1, c_2, c_3\}$.
+Each distribution is a function $f : T \rightarrow C$.
+The fact that each child gets at least one toy is the same as saying
+the function $f$ is onto.]
+
+The total number of ways is the number of onto functions from a set
+of 6 elements to a set of 3.
+Let $T$ be a set of 6 elements and $C = \{c_1, c_2, c_3\}$.
+let $U = \{f : T \rightarrow C\}$.
+Define
+\begin{align*}
+P_1(f) &= (\text{the image of $f$ does not contain $c_1$})\\
+P_2(f) &= (\text{the image of $f$ does not contain $c_2$})\\
+P_3(f) &= (\text{the image of $f$ does not contain $c_3$})
+\end{align*}
+We have $|U| = 3^6$.
+
+$N(P_1)$ is the number of function from $T$ to $C - \{c_1\} = \{c_2, c_3\}$.
+Therefore $N(P_1) = 2^6$.
+Likewise $N(P_2) = N(P_3) = 2^6$.
+
+$N(P_1 P_2)$ 
+is the number of function from $T$ to $C - \{c_1, c_2\} = \{c_3\}$.
+Therefore $N(P_1 P_2) = 1^6$.
+Likewise $N(P_1 P_3) = N(P_2 P_3) = 1^6$.
+
+$N(P_1 P_2 P_3)$ is the number of functions from $T$ to $C - \{c_1, c_2, c_3\}
+ = \emptyset$. There are no such functions.
+Therefore $N(P_1 P_2 P_3) = 0$.
+
+Therefore, by the inclusion-exclusion principle, 
+the total number of ways is
+\[
+3^6
+- \binom{3}{1} 2^6
++ \binom{3}{2} 1^6
+= 729 - 192 + 3
+= 540
+\] 
+The required number is 540.
+
+ANSWER: 
+\answerbox{540}
+\qed
+

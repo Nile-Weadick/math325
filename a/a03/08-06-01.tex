@@ -1,0 +1,33 @@
+Let $U$ be the apples in the bushel.
+Define
+\begin{align*}
+P_w(x) &= (\text{there are worms in $x$}) \\
+P_b(x) &= (\text{there are bruises on $x$})
+\end{align*}
+The required number is the number of apples that can be sold
+which is the number of apples without worms and without bruises, 
+i.e., the required number is $N(P_w' P_b')$.
+
+By the principle of inclusion-exclusion
+\[
+N(P_w' P_b') = |U| - (N(P_w) + N(P_b)) + N(P_wP_b)
+\]
+We are given 
+\begin{align*}
+|U| &= 100 \\
+N(P_w) &= 20 \\
+N(P_b) &= 15 \\
+N(P_w P_b) &= 10
+\end{align*}
+Therefore
+\[
+N(P_w' P_b') = 100 - (20 + 15) + 10 = 75
+\]
+Hence the number of apples that can be sold is 75.
+
+ANSWER:
+\answerbox{75}
+\qed
+
+
+

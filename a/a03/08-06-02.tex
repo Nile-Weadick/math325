@@ -1,0 +1,34 @@
+Let 
+\begin{align*}
+U &= \text{the set of applicants} \\
+P_1(x) &= (x \text{ has altitude sickness}) \\
+P_2(x) &= (x\text{ is not in good enough shape}) \\
+P_3(x) &= (x\text{ has allergies}) 
+\end{align*}
+We are given the following information
+\begin{align*}
+|U| &= 1000 \\
+N(P_1) &= 450 \\
+N(P_2) &= 622 \\
+N(P_3) &= 30 \\
+N(P_1 P_2) &= 111 \\
+N(P_1 P_3) &= 14 \\
+N(P_2 P_3) &= 18 \\
+N(P_1 N_2 P_3) &= 9
+\end{align*}
+The required number is $N(P_1' P_2' P_3')$.
+By the principle of inclusion-exclusion,
+\begin{align*}
+N(P_1' P_2' P_3') 
+&= |U| \\
+&\hspace{0.5cm} - (N(P_1) + N(P_2) + N(P_3) \\  
+&\hspace{0.5cm} + (N(P_1 P_2) + N(P_1 P_3) + N(P_2 P_3) \\  
+&\hspace{0.5cm} - (N(P_1 P_2 P_3) \\ 
+&= 1000 - (450 + 622 + 30) + (111 + 14 + 18) - 9 \\
+&= 32
+\end{align*}
+Therefore the number of applicants that qualify is 32.
+
+ANSWER:
+\answerbox{32}
+\qed

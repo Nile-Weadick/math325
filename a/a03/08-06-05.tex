@@ -1,0 +1,204 @@
+
+Let $U = \{1, 2, 3, ..., 200\}$.
+Note that $\floor{\sqrt{200}} = \floor{14.14...} = 14$.
+The primes less than or equal to 14 are 2, 3, 5, 7, 11, 13.
+
+First we count the number of integers in $U$ which are
+not divisible by 2, 3, 5, 7, 11, 13.
+Define
+\begin{align*}
+P_p(x) = (x \text{ divisible by $p$})
+\end{align*} 
+for $p = 2, 3, 5, 7, 11$, and $13$.
+We want to compute $N(P_2' P_3' P_5' P_7' P_{11}' P_{13}')$.
+The required number is then
+\[
+N(P_2' P_3' P_5' P_7' P_{11}' P_{13}') + |\{2, 3, 5, 7, 11, 13\}| - 1
+=
+N(P_2' P_3' P_5' P_7' P_{11}' P_{13}') + 5
+\]
+
+By the principle of inclusion-exclusion,
+\begin{align*}
+&N(P_2' P_3' P_5' P_7' P_{11}' P_{13}') \\
+&= 200  \\
+&\hspace{0.5cm} - 
+\left( 
+\floor{\frac{200}{2}}
++ \floor{\frac{200}{3}} 
++ \floor{\frac{200}{5}} 
++ \floor{\frac{200}{7}} 
++ \floor{\frac{200}{11}} 
++ \floor{\frac{200}{13}} 
+\right)  \\
+&\hspace{0.5cm} + 
+\biggl( 
+\floor{\frac{200}{2 \cdot 3}}
++ \floor{\frac{200}{2 \cdot 5}} 
++ \floor{\frac{200}{2 \cdot 7}} 
++ \floor{\frac{200}{2 \cdot 11}} 
++ \floor{\frac{200}{2 \cdot 13}} 
++ \floor{\frac{200}{3 \cdot 5}} 
++ \floor{\frac{200}{3 \cdot 7}} 
++ \floor{\frac{200}{3 \cdot 11}} 
+\\
+&\hspace{1.25cm}
++ \floor{\frac{200}{3 \cdot 13}} 
++ \floor{\frac{200}{5 \cdot 7}}
++ \floor{\frac{200}{5 \cdot 11}} 
++ \floor{\frac{200}{5 \cdot 13}} 
++ \floor{\frac{200}{7 \cdot 11}} 
++ \floor{\frac{200}{7 \cdot 13}} 
++ \floor{\frac{200}{11 \cdot 13}} 
+\biggr)  \\
+&\hspace{0.5cm} -
+\biggl( 
+\floor{\frac{200}{2 \cdot 3 \cdot 5}}
++\floor{\frac{200}{2 \cdot 3 \cdot 7}}
++\floor{\frac{200}{2 \cdot 3 \cdot 11}}
++\floor{\frac{200}{2 \cdot 3 \cdot 13}}
++\floor{\frac{200}{2 \cdot 5 \cdot 7}}
++\floor{\frac{200}{2 \cdot 5 \cdot 11}}
+\\
+&\hspace{1.25cm}
++\floor{\frac{200}{2 \cdot 5 \cdot 13}}
++\floor{\frac{200}{3 \cdot 5 \cdot 7}}
++\floor{\frac{200}{3 \cdot 5 \cdot 11}}
++\floor{\frac{200}{3 \cdot 5 \cdot 13}} 
++\floor{\frac{200}{3 \cdot 7 \cdot 11}}
++\floor{\frac{200}{3 \cdot 7 \cdot 13}}
+\\
+&\hspace{1.25cm}
++\floor{\frac{200}{3 \cdot 11 \cdot 13}}
++\floor{\frac{200}{5 \cdot 7 \cdot 11}}
++\floor{\frac{200}{5 \cdot 11 \cdot 13}} \biggr)
+\end{align*}
+Note that the other terms are 0 since
+\[
+\floor{\frac{200}{2 \cdot 3 \cdot 5 \cdot 7}} = \floor{\frac{200}{210}} = 0
+\]
+Hence we have 
+\begin{align*}
+N(P_2' P_3' P_5' P_7' P_{11}' P_{13}') 
+&= 200 - 267 + 132 - 24 \\
+&= 41
+\end{align*}
+
+Therefore the number of primes less than or equal to 200 is
+41 + 5 = 46.
+
+ANSWER:
+\answerbox{46}
+\qed
+
+
+\vspace{1cm}
+\textsc{Note.}
+You can (and should) of course write a simple function to count primes
+up to 200:
+\begin{Verbatim}[frame=single,fontsize=\footnotesize]
+>>> def isprime(n):
+...     for d in range(2, n):
+...         if n % d == 0: return False
+...     return True
+... 
+>>> count = 0
+>>> for x in range(2, 201):
+...     if isprime(x): count += 1
+... 
+>>> print(count)
+46
+\end{Verbatim}
+The computation of the terms in the inclusion-exclusion can of course
+be done with a program too.
+\begin{Verbatim}[frame=single,fontsize=\footnotesize]
+>>> p = [2,3,5,7,11,13]
+>>> for x in p:
+...     s += 200/x
+... 
+>>> print(s)
+267
+>>> s = 0
+>>> for i in range(6):
+...     for j in range(i+1,6):
+...         s += 200/(p[i] * p[j])
+... 
+>>> print(s)
+132
+>>> s = 0
+>>> for i in range(6):
+...     for j in range(i+1,6):
+...         for k in range(j+1,6):
+...             s += 200/(p[i] * p[j] * p[k])
+... 
+>>> print(s)
+24
+>>> s = 0
+>>> for i in range(6):
+...     for j in range(i+1,6):
+...         for k in range(j+1,6):
+...             for l in range(l+1,6):
+...                 s += 200/(p[i] * p[j] * p[k] * p[l])
+... 
+>>> print(s)
+0
+>>> 200 - 267 + 132 - 24
+41
+\end{Verbatim} 
+
+If you want to checkout the primes you can do this:
+\begin{Verbatim}[frame=single,fontsize=\footnotesize]
+>>> ps = [x for x in range(2,201) if isprime(x)]
+>>> print(len(ps))
+46
+>>> for x in ps:
+...     print(x)
+... 
+2
+3
+5
+7
+11
+13
+17
+19
+23
+29
+31
+37
+41
+43
+47
+53
+59
+61
+67
+71
+73
+79
+83
+89
+97
+101
+103
+107
+109
+113
+127
+131
+137
+139
+149
+151
+157
+163
+167
+173
+179
+181
+191
+193
+197
+199
+>>> 
+\end{Verbatim}
