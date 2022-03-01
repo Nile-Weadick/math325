@@ -1,0 +1,46 @@
+\input{thispreamble.tex}
+
+\renewcommand\AUTHOR{nweadick1@cougars.ccis.edu} % CHANGE TO YOURS
+
+\begin{document}
+\topmattertwo
+
+This is a 10-min quiz.
+
+Some \LaTeX\ help:
+\begin{enumerate}[nosep]
+\li \verb!$\binom{6}{2}$! gives $\binom{6}{2}$
+\li \verb!$12^{13}$! gives $12^{13}$
+\li \verb@$42!$@ gives $42!$
+\li \verb!$a_{n + 5}$! gives $a_{n + 5}$
+\end{enumerate}
+
+%------------------------------------------------------------------------------
+\nextq
+You want to tile a 2-by-$n$ area with 1-by-2 tiles of two kinds: 
+blank (no dots) and with one dot IN THE CENTER of the tile.
+Let $a_n$ be the number of tilings.
+Write down the recurrence relation of $a_n$, including JUST ENOUGH
+base cases that starts with $a_0$.
+\\
+\ANSWER
+\begin{answerlong}
+$ a_n = a_{n-1} + a_{n-2} $
+\end{answerlong}
+(You only need to state the answer.)
+
+%------------------------------------------------------------------------------
+\nextq
+If $a_n = 3 a_{n-1}$ and $a_0 = 5$, what is the closed form for
+$a_n$ (using the substitution method I used in class)
+\\
+\ANSWER
+\begin{answerlong}
+$a_n = a_0 * 3^n$
+\end{answerlong}
+(There might be more than 2.)
+
+%------------------------------------------------------------------------------
+\newpage
+\input{instructions.tex}
+\end{document}

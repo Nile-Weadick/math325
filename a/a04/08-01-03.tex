@@ -1,0 +1,59 @@
+
+(a)
+Let the one dollor coin, one dollar bill, five dollar fill be denoted by
+$a=1, b=1, c=1$.
+A deposit is a sequence of $a,b,c$ values such that the sum is $n$.
+For instance the deposit
+\[
+a b a c
+\]
+is a deposit for $a + b + a + c = 1 + 1 + 1 + 5 = 8$.
+
+A deposit for $n$ dollar is a sequence of the form
+\[
+\begin{cases}
+a p \\
+b p' \\
+c p'' \\
+\end{cases}
+\]
+where
+$p$ is a pattern for the deposit of $n - 1$ dollars,
+$p'$ is a pattern for the deposit of $n - 1$ dollars,
+$p''$ is a pattern for the deposit of $n - 5$ dollars,
+Hence if $a_n$ denotes the number of ways to deposit $n$ dollars,
+we have the recurrence relation
+\[
+a_n =  a_{n-1} + a_{n - 1} + a_{n - 5} = 2 a_{n - 1} + a_{n - 5}
+\]
+Clearly
+\begin{enumerate}[nosep]
+\li $a_1 = 2$: the patterns are $a$ and $b$
+\li $a_2 = 4$: the patterns are $aa, ab, ba, bb$
+\li $a_3 = 8$: the patterns are $aaa, aab, ..., bbb$, i.e., sequence of length 3 using two symbols
+\li $a_4 = 16$: the patterns are $aaaa, aaab, ..., bbbb$ i.e., sequence of length 4 using two symbols
+\li $a_5 = 33$: the patterns are $aaaaa, aaaab, ..., bbbbb, c$, i.e., sequence of length 5 using two symbols and $c$
+\end{enumerate}
+
+Hence we have
+\[
+a_n =
+\begin{cases}
+2 a_{n-1} + a_{n - 5} & \text{ if } n \geq 6 \\
+2^n                 & \text{ if } 1 \leq n \geq 4 \\
+33                  & \text{ if } n = 5 \\
+
+\end{cases}
+\]
+
+(b)
+\begin{align*}
+a_6 &= 2 a_5 + a_1 = 2 \cdot 33 + 2 = 68 \\
+a_7 &= 2 a_6 + a_2 = 2 \cdot 68 + 4 = 72 \\
+a_8 &= 2 a_7 + a_3 = 2 \cdot 72 + 8 = 152 \\
+a_9 &= 2 a_8 + a_4 = 2 \cdot 152 + 16 = 320 \\
+a_{10} &= 2 a_9 + a_5 = 2 \cdot 320 + 33 = 673
+\end{align*}
+\ANSWER \answerbox{673}
+
+\qed

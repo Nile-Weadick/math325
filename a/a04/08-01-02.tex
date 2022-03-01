@@ -1,0 +1,36 @@
+Let $a_n$ be the number of permutations on $n$ distinct symbols.
+
+The task $T$ of forming a permutation is
+the same as the task $T_1$ of writing down the first symbol
+following by the task $T_2$ of writing down $n - 1$ symbols distinct
+from the symbol written down by task $T_1$.
+By the multiplication principle,
+the number of ways to perform $T$ is the number of ways to perform
+$T_1$ multiplied by the number of ways to perform $T_2$, i.e.,
+\[
+a_n = n \cdot a_{n - 1}
+\]
+
+Clearly $a_1 = 1$.
+To compute a closed form for $a_n$, note that
+\begin{align*}
+  a_n
+  &= n a_{n - 1} \\
+  &= n (n - 1) a_{n - 2} \\
+  &= n (n - 2) a_{n - 3} \\
+  &= ... \\
+  &= n (n - 2)(n - 3)\cdots(n - (k - 1)) a_{n - k} \\
+\end{align*}
+When $n - k = 1$, we have $k = n - 1$ and 
+\begin{align*}
+  a_n
+  &= n (n - 2)(n - 3)\cdots 2 \cdot a_1 \\
+  &= n (n - 2)(n - 3)\cdots 2 \cdot 1 \\
+\end{align*}
+
+Hence
+\[
+a_n = n!
+\]
+for $n \geq 1$.
+\qed

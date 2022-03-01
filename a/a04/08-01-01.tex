@@ -1,0 +1,49 @@
+Let $T_n$ be the number of moves to solve the $n$--disks tower of Hanoi
+problem.
+The recurrence relation is
+\[
+T_n = 2 T_{n-1} + 1 \tag{*}
+\]
+with base case of $T_1 = 1$.
+
+Let $P(n)$ be the statement
+\[
+P(n) = \biggl( T_n = 2^n - 1 \biggr)
+\]
+for $n \geq 1$.
+We will prove that $P(n)$ holds for all $n \geq 1$ using
+induction.
+
+\text{Base case.}
+For $n = 1$, $T_1 = 1$
+and $2^1 - 1 = 2 - 1 = 1$.
+Hence $T_1 = 2^1 - 1$. Therefore $P(1)$ holds.
+
+\text{Inductive case.}
+Suppose $P(n)$ holds, i.e., 
+\[
+T^n = 2^n - 1
+\]
+We want to show that $P(n + 1)$ holds as well, i.e., we want to show
+\[
+T^{n + 1} = 2^{n + 1} - 1
+\]
+From the recurrence relation $(*)$,
+\[
+T_{n + 1} = 2T_n + 1
+\]
+Therefore
+\[
+T_{n + 1} = 2(2^n - 1) + 1 = 2^{n + 1} - 2 + 1 = 2^{n+1} - 1
+\]
+and hence $P(n + 1)$ holds.
+
+Therefore by induction, $P(n)$ holds for all $n \geq 1$, i.e.,
+\[
+T_n = 2^n - 1
+\]
+for all $n \geq 1$.
+\qed
+
+
+
