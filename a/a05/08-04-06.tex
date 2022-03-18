@@ -1,0 +1,50 @@
+
+(a)
+The generating function is
+\begin{align*}
+  f(x) &= \sum_{i=0}^\infty (-1)x^i \\
+  &= - \sum_{i=0}^\infty x^i \\
+  &= - \frac{1}{1 - x} \\
+  &= \frac{1}{x - 1} 
+\end{align*}
+
+(b)
+The generating function is
+\begin{align*}
+  f(x) &= \sum_{n=1}^\infty 2^nx^n \\
+  &= \sum_{n=0}^\infty (2x)^n \\
+  &= \frac{1}{1 - 2x} 
+\end{align*}
+
+(c)
+The generating function is
+\begin{align*}
+  f(x) &= \sum_{n=0}^\infty (n-1)x^n \\
+  &= \sum_{n=0}^\infty nx^n - \sum_{n=0}^\infty x^n \\
+  &= \sum_{n=1}^\infty nx^{n} - \frac{1}{1 - x} \\
+  &= x\sum_{n=1}^\infty nx^{n-1} - \frac{1}{1 - x} \\
+  &= x \sum_{n=1}^\infty \frac{d}{dx} x^{n} - \frac{1}{1 - x} \\
+  &= x \frac{d}{dx} \sum_{n=1}^\infty x^{n} - \frac{1}{1 - x} \\
+  &= x \frac{d}{dx} \frac{1}{1 - x} - \frac{1}{1 - x} \\
+  &= x \frac{-1}{(1 - x)^2} - \frac{1}{1 - x} \\
+  &= \frac{-x - (1 - x)}{(1 - x)^2}  \\
+  &= -\frac{1}{(1 - x)^2}  
+\end{align*}
+
+
+(d)
+The generating function is
+\begin{align*}
+  f(x) &= \sum_{n=0}^\infty \frac{1}{(n+1)!} x^n \\
+  &= \frac{1}{x}\sum_{n=0}^\infty \frac{1}{(n+1)!} x^{n+1} \\
+  &= \frac{1}{x}\sum_{k=1}^\infty \frac{1}{k!} x^{k} & & \text{(let $k = n + 1$)}\\
+  &= \frac{1}{x}
+  \left(
+  \sum_{k=0}^\infty \frac{1}{k!} x^{k} - 1
+  \right)\\
+  &= \frac{1}{x}
+  \left(
+  e^x - 1
+  \right)\\
+  &= \frac{e^x - 1}{x}
+\end{align*}

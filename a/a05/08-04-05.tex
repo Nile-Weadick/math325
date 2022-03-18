@@ -1,0 +1,54 @@
+
+(a)
+The generating function is
+\begin{align*}
+  f(x) &= \sum_{i=0}^\infty 5x^i \\
+  &= 5 \sum_{i=0}^\infty x^i \\
+  &= 5 \frac{1}{1 - x} \\
+  &= \frac{5}{1 - x} \\
+\end{align*}
+
+(b)
+The generating function is
+\begin{align*}
+  f(x) &= \sum_{i=0}^\infty 3^nx^i \\
+  &= 5 \sum_{i=0}^\infty (3x)^i \\
+  &= \frac{1}{1 - 3x} 
+\end{align*}
+
+(c)
+The generating function is
+\begin{align*}
+  f(x) &= \sum_{i=3}^\infty 2x^i \\
+  &= 2 \sum_{i=3}^\infty x^i \\
+  &= 2 \sum_{k=0}^\infty x^{k+3} & & \text{(let $k = i - 3$)} \\
+  &= 2 \sum_{k=0}^\infty x^3x^{k} \\
+  &= 2x^3 \sum_{k=0}^\infty x^{k} \\
+  &= 2x^3 \frac{1}{1 - x} \\
+  &= \frac{2x^3}{1 - x} 
+\end{align*}
+
+
+(d)
+The generating function is
+\begin{align*}
+  f(x) &= \sum_{n=0}^\infty (2n + 3) x^n \\
+  &= \sum_{n=0}^\infty 2n x^n + \sum_{n=0}^\infty 3 x^n \\
+  &= 2 \sum_{n=1}^\infty n x^n + 3 \sum_{n=0}^\infty x^n \\
+  &= 2x \sum_{n=1}^\infty n x^{n-1} + 3 \frac{1}{1 - x} \\
+  &= 2x \sum_{n=1}^\infty \frac{d}{dx} x^{n} + 3 \frac{1}{1 - x} \\
+  &= 2x \frac{d}{dx} \sum_{n=0}^\infty x^{n} + \frac{3}{1 - x} \\
+  &= 2x \frac{d}{dx} \frac{1}{1 - x} + \frac{3}{1 - x} \\
+  &= 2x \frac{-1}{(1 - x)^2} + \frac{3}{1 - x} \\
+  &= \frac{-2x}{(1 - x)^2} + \frac{3}{1 - x} \\
+  &= \frac{-2x}{(1 - x)^2} + \frac{3(1 + x)}{(1 - x)(1 + x)} \\
+  &= \frac{-2x + 3(1 + x)}{(1 - x)^2} \\
+  &= \frac{3 - x}{(1 - x)^2} 
+\end{align*}
+
+
+(e)
+The generating function is
+\begin{align*}
+  f(x) &= \sum_{n=0}^\infty \binom{8}{n} x^n \\
+\end{align*}

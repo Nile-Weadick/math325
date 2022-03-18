@@ -1,0 +1,129 @@
+(a)
+We have
+\begin{align*}
+  (1 + x^5 + x^{10} + x^{15} + \cdots)^3
+  &= (1 + (x^5) + (x^5)^2 + (x^5)^{3} + \cdots))^3 \\
+  &= \left( \sum_{n = 0} (x^5)^n \right)^3 \\
+  &= \left( \frac{1}{1 - x^5} \right)^3 \\
+  &= \sum_{n = 0}^\infty \binom{3 + n - 1}{n} (x^5)^n \\
+  &= \sum_{n = 0}^\infty \binom{n + 2}{n} x^{5n} \\
+  &= \sum_{n = 0}^\infty \binom{n + 2}{(n + 2) - n} x^{5n} \\
+  &= \sum_{n = 0}^\infty \binom{n + 2}{2} x^{5n} \\
+\end{align*}
+In the above power series, the coefficient of $x^{10}$
+is the coefficient of $x^{5n}$ when $n = 2$, which is 
+$\binom{2 + 2}{2} = \binom{4}{2} = 4 \cdot 3 /2 = 6$.
+
+(\textsc{Note.} Alternatively, this is also the number of solutions to
+$a + b + c = 10$ where
+$a=0,5,10,15,...$,
+$b=0,5,10,15,...$,
+$c=0,5,10,15,...$.)
+
+(b)
+We have
+\begin{align*}
+  (x^3 + x^4 + x^5 + x^6 + x^7 + \cdots)^3
+  &= (x^3(1 + x + x^2 + x^3 + x^4 + \cdots)^3 \\
+  &= \left( x^3 \frac{1}{1 - x} \right)^3 \\
+  &= x^9 \left( \frac{1}{1 - x} \right)^3 \\
+  &= x^9 \sum_{n=0}^\infty \binom{3 + n - 1}{n} x^n \\
+  &= x^9 \sum_{n=0}^\infty \binom{n + 2}{n} x^n \\
+  &= x^9 \sum_{n=0}^\infty \binom{n + 2}{(n + 2) - n} x^n \\
+  &= x^9 \sum_{n=0}^\infty \binom{n + 2}{2} x^n \\
+  &= \sum_{n=0}^\infty \binom{n + 2}{2} x^{n+9} \\
+  &= \sum_{k=9}^\infty \binom{k - 7}{2} x^{k} & \text{(let $k = n + 9$)}
+\end{align*}
+In the above power series, the coefficient of $x^{10}$
+is the coefficient of $x^{k}$ when $k = 10$, which is 
+$\binom{3}{2} = 3$.
+
+
+(\textsc{Note.} Alternatively, this is also the number of solutions to
+$a + b + c = 10$ where
+$a,b,c$ are all $\geq 3$.)
+
+(c)
+We have
+\begin{align*}
+&(x^4 + x^5 + x^6)(x^3 + x^4 + x^5 + x^6 + x^7)(1 + x + x^2 +
+  x^3 + x^4 + \cdots) \\
+  &= x^4(1 + x + x^2)x^3(1 + x + x^2 + x^3 + x^4)\frac{1}{1 - x} \\
+  &= x^7 \frac{1 - x^3}{1 - x} \frac{1 - x^5}{1 - x} \frac{1}{1 - x} \\
+  &= x^7 (1 - x^3)(1 - x^5) \left( \frac{1}{1 - x} \right)^3\\
+  &= x^7 (1 - x^3 - x^5 + x^8) \sum_{n=0}^\infty \binom{3 + n - 1}{n} x^n\\
+  &= (x^7 - x^{10} - x^{12} + x^{16}) \sum_{n=0}^\infty \binom{n + 2}{n} x^n\\
+  &= (x^7 - x^{10} - x^{12} + x^{16}) \sum_{n=0}^\infty \binom{n + 2}{2} x^n
+\end{align*}
+The coefficient of $x^{10}$ is
+\[
+1 \cdot \binom{3 + 2}{2} - 1 \cdot \binom{0+2}{2}
+= \binom{5}{2} - \binom{2}{2} = \frac{5 \cdot 4}{2} - 1 = 9 
+\]
+
+(\textsc{Note.} Alternatively, this is also the number of solutions to
+$a + b + c = 10$ where
+$4 \leq a \leq 6$,
+$3 \leq b \leq 7$,
+$0 \leq c$.)
+
+(d)
+We have
+\begin{align*}
+&(x^2 + x^4 + x^6 + x^8 + \cdots)(x^3 + x^6 + x^9 + \cdots)(x^4 +
+  x^8 + x^{12} + \cdots) \\
+  &= x^2(1 + x^2 + x^4 + x^6 + \cdots)x^3(1 + x^3 + x^6 + \cdots)x^4(1 +
+  x^4 + x^{8} + \cdots) \\
+  &= x^{2+3+4}(1 + x^2 + \cdots)(1 + x^3 + \cdots)(1 + x^4  + \cdots) \\
+  &= x^{9}(1 + x^2 + \cdots)(1 + x^3 + \cdots)(1 + x^4  + \cdots)
+\end{align*}
+The term $a_{10}x^{10}$ in the above is the product $x^9$ and the
+term of $x^1$ in
+$(1 + x^2 + \cdots)(1 + x^3 + \cdots)(1 + x^4  + \cdots)$.
+Clearly the coefficient of
+$x^1$ in $(1 + x^2 + \cdots)(1 + x^3 + \cdots)(1 + x^4  + \cdots)$ is $0$.
+Hence the coefficient of $x^{10}$ in 
+$(x^2 + x^4 + x^6 + x^8 + \cdots)(x^3 + x^6 + x^9 + \cdots)(x^4 +
+x^8 + x^{12} + \cdots)$
+is $0$.
+
+
+(\textsc{Note.} Alternatively, this is also the number of solutions to
+$a + b + c = 10$ where
+$a=2,4,6,...$,
+$b=3,6,9,...$,
+$c=4,8,12,...$.)
+
+(e)
+The term with $x^{10}$ in
+\[
+(1+x^2+x^4+x^6+x^8+ \cdots)(1+x^4+x^8+x^{12} + \cdots)(1 +
+x^6 + x^{12} + x^{18} + \cdots)
+\]
+is given by
+\[
+1 \cdot x^4 \cdot x^6 + x^2 \cdot x^8 \cdot x^0 + x^4 \cdot x^0 \cdot x^6
++ x^6 \cdot x^4 \cdot x^0 + x^{10} \cdot x^0 \cdot x^0 = 5x^{10}
+\]
+Therefore the required coefficient is $5$.
+This is also the number of solutions to
+\[
+a + b + c = 10
+\]
+where $a=0,2,4,6,...$ and $b=0,4,8,12,...$ and $c = 0,6,12,18,...$.
+The following are the solution:
+\begin{enumerate}[nosep]
+\item $(a,b,c) = (0,4,6)$
+\item $(a,b,c) = (2,8,0)$
+\item $(a,b,c) = (4,0,6)$
+\item $(a,b,c) = (6,4,0)$
+\item $(a,b,c) = (10,0,0)$
+\end{enumerate}
+
+\textsc{Note.}
+Whether you should manipulate the power series to get the
+required coefficient or convert to a counting problem to get the
+coefficient depends on the scenario.
+Sometimes you don't know which is better until you try.
+For instance for (e), you can try to manipulate the power series
+and see if you can get the answer.

@@ -1,0 +1,255 @@
+\input{thispreamble.tex}
+
+\renewcommand\AUTHOR{nweadick1@cougars.ccis.edu} % CHANGE TO YOURS
+
+\begin{document}
+\topmattertwo
+
+\textsc{Objectives}
+\begin{enumerate}[nosep]
+\item Use generating functions to compute closed forms for linear recurrences.
+\item Use generating functions to solve counting problems.
+\item Use generating functions to compute/prove identities.
+\end{enumerate}
+\vspace{1cm}
+
+
+
+The following are practice problems for self-study:
+\begin{enumerate}[nosep]
+\li Rosen 8th edition, section 8.4: Odd numbered problems 1-57 except 43,
+47, 49, 51.
+41 was mentioned in my notes (and in class).
+46 is in my notes.
+53-57 are in my notes.
+\end{enumerate}
+Some solutions are provided.
+For this assignment the problems you need to solve are
+\begin{enumerate}[nosep]
+\li Rosen 8th edition, section 8.4:
+\underline{questions 8, 10, 14, 18, 24, 34, 38}.
+\end{enumerate}
+Explain your work completely using the solutions provided as
+guide and examples on how to write math properly.
+
+In \LaTeX\, math notation is enclosed by the \verb!$! symbols.
+For instance \verb!$x = a_{1} + b^{2}$! gives you $x = a_{1} + b^{2}$.
+For emphasis you can write also write it as
+\verb!\[ x = a_{1} + b^{2} \]!
+to center your math:
+\[
+x = a_{1} + b^{2}
+\]
+For binomial coefficients, \verb!$\binom{5}{2}$! will give you 
+$\binom{5}{2}$.
+You can also look at the solutions, find something that you can use,
+copy-and-paste, and modify.
+
+For more information about \LaTeX\, go to my
+website
+\href{http://bit.ly/yliow0}{http://bit.ly/yliow0},
+click on \verb!Yes!
+you are one of my students,
+then look for
+\href{https://drive.google.com/file/d/0BzjYrK0VFuMWZm5xV0kyR3J2Zm8/view?usp=sharing}{latex.pdf}.)
+Even easier: ask questions in CCCS discord.
+
+
+
+
+
+Draw a box around your final answer if the question required
+an explicit answer (i.e., if it's not a proof question).
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.4, question 1.
+
+\SOLUTION
+
+\input{08-04-01.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.4, question 2.
+
+\SOLUTION
+
+\input{08-04-02.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.4, question 3.
+
+\SOLUTION
+
+\input{08-04-03.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.4, question 4.
+
+\SOLUTION
+
+\input{08-04-04.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.4, question 5.
+
+\SOLUTION
+
+\input{08-04-05.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.4, question 6.
+
+\SOLUTION
+
+\input{08-04-06.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.4, question 7.
+
+\SOLUTION
+
+\input{08-04-07.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.4, question 8.
+
+\SOLUTION
+
+For each of these generating functions, provide a closed
+formula for the sequence it determines.
+
+(a) = $(x^2+1)^3$ = by multiplying out, we get $x^6 + 3x^4 + 3x2 + 1$
+\answerbox{$a_0 = 1, a_2 = 3, a_4=3, a_6 = 1$}
+
+(b) = $(3x-1)^3$ = by multiplying out, we get $27x^3-27x^2+9x-1$
+\answerbox{$a_0 =-1,a_1=9,a_2=-27,a_3=27$}
+
+(c) = $1/(1-2x^2)$ = \answerbox{$x^{2n}$, ODD coef's are 0.}
+
+(d) = $x^2/(1-x)^3$ = $x^2 \cdot \binom{n+2}{2}x^n$ = $\binom{n+2}{2}x^{n+2}$ = $\binom{n}{2}x^n$
+\answerbox{$\binom{n}{2}$ if $n \geqslant 2$, $0$ if $n=1,2$}
+
+(e) = $x-1+(1/(1-3x))$ = $a_n = $
+\answerbox{$3^n$,$a_0=-1=3^0=0, a_1= 1+3^1= 4$}
+
+(f) = 
+\answerbox{$a_n$ = $(-1)^n3n$ for $n \geqslant 3$ 
+$a_n$ = $(-1)^n\binom{n+2}{2}$ for $n < 3$}
+
+(g) = $x/(1+x+x^2)$ = \answerbox{$a_n = 0$ for n is a multiple of 3, 
+$a_n =1$, for n = 1 > multiple of 3, 
+$a_n =-1$, for n = 2 > multiple of 3}
+
+(h) = $e^{3x^2} - 1$ = \answerbox{$a_0 = 0$, $a_n = 0$ for n is ODD, $a_{2n} = 3^n /m!$ for n is EVEN}
+\input{08-04-08.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.4, question 9.
+
+\SOLUTION
+
+\input{08-04-09.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.4, question 10.
+
+\SOLUTION
+
+(a) = $1/(1-x^3)$ = $\binom{n+2}{2}x^n$
+\answerbox{$\binom{5}{2} = 10$}
+
+(b) = $\binom{n+2}{2}x^n$
+\answerbox{$\binom{5}{2} = 10$}
+
+(c) = 
+
+(d) = \answerbox{2}
+
+(e) = \answerbox{0}
+
+\input{08-04-10.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.4, question 14.
+
+\SOLUTION
+
+$x^n$ for $1/(1-x)^5$ = $ \binom{n+4}{4}$
+
+$\binom{16}{4} - 5 \cdot \binom{12}{4} + 10 \cdot \binom{8}{4} - 10 \cdot \binom{4}{4}$
+
+$1820-2475+700-10$
+
+\answerbox{35}
+
+\input{08-04-14.tex}
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.4, question 18.
+
+\SOLUTION
+
+$x^n$ for $1/(1-x)^3$ = $\binom{n+2}{2}$
+
+$\binom{13}{2} - \binom{5}{2}$
+
+\answerbox{68}
+\input{08-04-18.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.4, question 24.
+
+\SOLUTION
+
+$ x^n $ for $1/(1-x)^2$ = $n+1$
+
+$1 \cdot 3 + 2 \cdot 2 + 3 \cdot 1$
+
+\answerbox{10}
+
+\input{08-04-24.tex}
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.4, question 34.
+
+\SOLUTION
+
+$G(x)$ = $ 1/(1-4x)$
+
+\answerbox{$a_k$ = $4^k$}
+
+\input{08-04-34.tex}
+
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Rosen 8th edition, section 8.4, question 38.
+
+\SOLUTION
+
+\input{08-04-38.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\nextq Find a closed form for $0^3 + 1^3 + 2^3 + \cdots + n^3$.
+
+\SOLUTION
+
+\input{sum-of-cubes.tex}
+
+%------------------------------------------------------------------------------
+\newpage
+\input{instructions.tex}
+\end{document}

@@ -1,0 +1,77 @@
+
+(a) The generating function is
+\[
+f(x)
+= \sum_{i=0}^6 (-1)x^i
+= -\sum_{i=0}^6 x^i
+= -\frac{1 - x^7}{1 - x} 
+= \frac{x^7 - 1}{1 - x} 
+\]
+
+(b) The generating function is
+\begin{align*}
+  f(x) &= 1 + 3x + 9x^2 + 27x^3 + 81x^4 + 243x^5 + 729x^6 + \cdots \\
+  &= 1 + (3x) + (3x)^2 + (3x)^3 + (3x)^4 + (3x)^5 + (3x)^6 + \cdots \\
+  &= \frac{1}{1 - 3x}
+\end{align*}
+
+(c) The generating function is
+\begin{align*}
+  f(x)
+  &= 0 + 0x + 3x^2 + (-3)x^3 + 3x^4 + (-3)x^5 + 3x^6 + (-3)x^7 + \cdots\\
+  &= 3x^2 (1 - x + x^2 - x^3 + x^4 - x^5 \cdots) \\
+  &= 3x^2 (1 + (-x) + (-x)^2 + (-x)^3 + (-x)^4 + (-x)^5 \cdots) \\
+  &= 3x^2 \frac{1}{1 - (-x)} \\
+  &= \frac{3x^2}{1 + x} 
+\end{align*}
+
+
+(d) The generating function is
+\begin{align*}
+  f(x)
+  &= x + \sum_{i=0}^\infty x^i \\
+  &= x + \frac{1}{1 - x} \\
+  &= \frac{1 - x + 1}{1 - x} \\
+  &= \frac{2 - x}{1 - x}
+\end{align*}
+
+(e)
+The generating function is
+\begin{align*}
+  f(x)
+  &= \sum_{i=0}^7 2^i\binom{7}{i} x^i \\
+  &= \sum_{i=0}^7 \binom{7}{i} (2x)^i \\
+  &= (1 + 2x)^7
+\end{align*}
+
+
+(f)
+The generating function is
+\begin{align*}
+  f(x)
+  &= (-3) + 3x + (-3)x^2 + 3x^3 + (-3)x^4 + 3x^5 + \cdots \\
+  &= (-3) \sum_{i=0}^\infty (-x)^i \\
+  &= (-3) \frac{1}{1 - (-x)} \\
+  &= - \frac{3}{1 + x} 
+\end{align*}
+
+(g)
+The generating function is
+\begin{align*}
+  f(x)
+  &= 0 + 1x + (-2)x^2 + 4x^3 + (-8)x^4 + 16x^5 + (-32)x^6 + 64x^7 + \cdots \\
+  &= \sum_{i=0}^\infty (-2)^{i-1}x^i \\
+  &= \sum_{i=0}^\infty \frac{1}{-2}(-2)^{i}x^i \\
+  &= -\frac{1}{2} \sum_{i=0}^\infty (-2x)^i \\
+  &= -\frac{1}{2} \frac{1}{1 - (-2x)} \\
+  &= -\frac{1}{2(1 + 2x)} 
+\end{align*}
+
+(h)
+The generating function is
+\begin{align*}
+  f(x)
+  &= \sum_{i=0}^\infty x^{2i} \\
+  &= \sum_{i=0}^\infty (x^2)^i \\
+  &= \frac{1}{1 - x^2} 
+\end{align*}

@@ -1,0 +1,98 @@
+
+(a)
+The generating function for
+$0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0$,... is
+\begin{align*}
+f(x) &= 2x + 2x^2 + \cdots + 2x^6 \\
+     &= 2x(1 + x + \cdots + x^5) \\
+     &= 2x\frac{1 - x^6}{1 - x}
+\end{align*}
+
+
+(b)
+The generating function for
+$0, 0, 0, 1, 1, 1, 1, 1, 1,...$ is
+\begin{align*}
+f(x) &= x^3 + x^4 + x^5 + \cdots \\
+     &= x^3(1 + x + x^2 + \cdots) \\
+     &= x^3\frac{1}{1 - x} \\
+     &= \frac{x^3}{1 - x}
+\end{align*}
+
+
+(c)
+The generating function for
+$0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, ...$ is
+\begin{align*}
+f(x) &= x + x^4 + x^7 + x^{10} + \cdots \\
+     &= x(1 + x^3 + x^6 + x^{9} + \cdots) \\
+     &= x(1 + (x^3) + (x^3)^2 + (x^{3})^3 + \cdots) \\
+     &= x\frac{1}{1 - (x^3)} \\
+     &= \frac{x}{1 - x^3}
+\end{align*}
+
+
+(d)
+The generating function for
+$2, 4, 8, 16, 32, 64, 128, 256,...$ is
+\begin{align*}
+f(x) &= 2 + 4x + 8x^2 + 16x^3 + 32x^{4} + \cdots \\
+     &= 2(1 + 2x + 4x^2 + 8x^{3} + 16x^4 + \cdots) \\
+     &= 2(1 + (2x) + (2x)^2 + (2x)^3 + \cdots) \\
+     &= 2\frac{1}{1 - (2x)} \\
+     &= \frac{2}{1 - 2x}
+\end{align*}
+
+
+(e)
+The generating function for
+$\binom{7}{0}, \binom{7}{1}, \binom{7}{2}, ..., \binom{7}{7}, 0, 0, 0, ...$ is
+\begin{align*}
+f(x) &= \binom{7}{0} + \binom{7}{1}x + \binom{7}{2}x^2 + \cdots
+        + \binom{7}{7}x^7 \\
+     &= \sum_{i=0}^7 \binom{7}{i} x^i \\
+     &= (1 + x)^7
+\end{align*}
+
+
+(f)
+The generating function for
+$2, -2, 2, -2, 2, -2, 2, -2, ...$ is
+\begin{align*}
+f(x) &= 2 + (-2)x + 2x^2 + (-2)x^3 + \cdots \\
+     &= 2 ( 1 + (-1)x + 1x^2 + (-1)x^3 + \cdots ) \\
+     &= 2 ( 1 + (-x) + (-x)^2 + (-x)^3 + \cdots ) \\
+     &= 2 \frac{1}{1 - (-x)} \\
+     &= \frac{2}{1 + x} 
+\end{align*}
+
+
+(g)
+The generating function for
+$1, 1, 0, 1, 1, 1, 1, 1, 1, 1, ...$is
+\begin{align*}
+f(x) &= 1 + 1x + 0x^2 + 1x^3 + 1x^4 + 1x^5 + \cdots \\
+     &= 1 + x + (x^3 + x^4 + x^5 + \cdots ) \\
+     &= 1 + x + x^3(1 + x + x^2 + \cdots ) \\
+     &= 1 + x + x^3\frac{1}{1 - x} \\
+     &= 1 + x + \frac{x^3}{1 - x} \\
+     &= \frac{(1 + x)(1 - x) + x^3}{1 - x} \\
+     &= \frac{1 - x^2 + x^3}{1 - x} \\
+\end{align*}
+
+
+%[1∕(1−x)]−x^2 = (1 - x^2(1 - x))/(1 - x) = (1 - x^2 + x^3)/(1 - 2)
+
+
+(g)
+The generating function for
+$0, 0, 0, 1, 2, 3, 4, ...$ is
+\begin{align*}
+f(x) &= 1x^3 + 2x^4 + 3x^5 + 4x^6 + \cdots \\
+     &= x^3(1 + 2x + 3x^2 + 4x^3 + \cdots) \\
+     &= x^3\frac{d}{dx}(x + x^2 + x^3 + x^4 + \cdots) \\
+     &= x^3\frac{d}{dx}(1 + x + x^2 + x^3 + x^4 + \cdots) \\
+     &= x^3\frac{d}{dx}\frac{1}{1 - x} \\
+     &= x^3\frac{-1}{(1 - x)^2} \\
+     &= -\frac{x^3}{(1 - x)^2} \\
+\end{align*}

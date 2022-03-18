@@ -88,6 +88,18 @@ A country uses as currency coins with values of 1 peso,
 Find a recurrence relation for the number of ways to pay
 a bill of n pesos if the order in which the coins and bills
 are paid matters.
+
+First 4 initial conditions
+
+$a_1 = 1 , a_2 = 2, a_3 = 3, a_4 =5 $
+
+if $a_n$ denotes the number of ways to deposit n pesos, we have the recurrence relation
+
+for $n \geqslant 100$
+
+$\{a_n = a_{n-1} + a_{n-2} + 2a_{n-5} + 2a_{n-10} 
++ a_{n-20} + a_{n-50} + a_{n-100}\}$
+
 \SOLUTION
 
 \input{08-01-04.tex}
@@ -95,6 +107,39 @@ are paid matters.
 %------------------------------------------------------------------------------
 \newpage
 \nextq Rosen 8th edition, section 8.1, question 8.
+a) Find a recurrence relation for the number of bit strings
+of length n that contain three consecutive 0s.
+b) What are the initial conditions?
+c) How many bit strings of length seven contain three
+consecutive 0s?
+
+(a) let $a_n$ be the number of bit strings of length n containing three consecutive 0s.
+
+we have the recurrence relation
+
+for $n \geqslant 3$
+
+$\{a_n = a_{n-1} + a_{n-2} + a_{n-3} + 2^{n-3}\}$
+
+\answerbox{$\{a_n = a_{n-1} + a_{n-2} + a_{n-3} + 2^{n-3}\}$}
+
+(b) First 3 initial conditions are , 
+
+\answerbox{$a_1 = 0, a_2 = 0, a_3 = 1$}
+
+(c) 
+
+$a_4 = 1 + 0 + 0 + 2^1 = 3$
+
+$a_5 = 3 + 1 + 0 + 2^2 = 8$
+
+$a_6 = 8 + 3 + 1 + 2^3 = 20$
+
+$\{a_7 = a_{6} + a_{5} + a_{4} + 2^{4}\}$
+
+$\{a_7 = 20 + 8 + 3 + 2^{4}\} = 47$
+
+\answerbox{47}
 
 \SOLUTION
 
@@ -103,6 +148,39 @@ are paid matters.
 %------------------------------------------------------------------------------
 \newpage
 \nextq Rosen 8th edition, section 8.1, question 12.
+a) Find a recurrence relation for the number of ways to
+climb n stairs if the person climbing the stairs can take
+one, two, or three stairs at a time.
+b) What are the initial conditions?
+c) In how many ways can this person climb a flight of
+eight stairs?
+
+(a)let $a_n$ be the number of ways to
+climb n stairs if the person climbing the stairs can take
+one, two, or three stairs at a time.
+
+we have the recurrence relation
+
+\answerbox{for $n \geqslant 3$ \{$a_n = a_{n-1} + a_{n-2} a_{n-3}$\}}
+
+(b) The initial conditions are 
+
+\answerbox{$a_0 = 1, a_1 = 1 , a_2 = 2, a_3 = 4$ }
+
+(c) 
+
+$a_4 = a_{3} + a_{2} + a_{1} = 4 + 2 + 1 = 7$
+
+$a_5 = a_{4} + a_{3} + a_{2} = 7 + 4 + 2 = 13$
+
+$a_6 = a_{5} + a_{4} + a_{3} = 13 + 7 + 4 = 24$
+
+$a_7 = a_{6} + a_{5} + a_{4} = 24 + 13 + 7 = 44$
+
+Now, $a_8 = a_{7} + a_{6} + a_{5} = 44 + 24 + 13 = 81$
+
+\answerbox{81}
+
 
 \SOLUTION
 
@@ -111,6 +189,15 @@ are paid matters.
 %------------------------------------------------------------------------------
 \newpage
 \nextq Rosen 8th edition, section 8.1, question 24.
+Find a recurrence relation for the number of bit sequences
+of length n with an even number of 0s.
+
+let $a_n $ be the number of bit sequences
+of length n with an even number of 0s.
+
+we have the recurrence relation
+
+\answerbox{for $n \geqslant 2$ \{$a_n = a_{n-1} + 2^{n-1} - a_{n-1}$\}}
 
 \SOLUTION
 

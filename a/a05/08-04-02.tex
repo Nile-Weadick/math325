@@ -1,0 +1,9 @@
+The generating function for 1, 4, 16, 64, 256 is
+\begin{align*}
+f(x) &= 1 + 4x + 16x^2 + 64 x^3 + 256 x^4 \\
+     &= 1 + 4x + 4^2x^2 + 4^3 x^3 + 4^4 x^4 \\
+     &= 1 + 4x + (4x)^2 + (4x)^3 + (4x)^4 \\
+     &= \frac{1 - (4x)^5}{1 - x} \\
+     &= \frac{1 - 1024x^5}{1 - x}
+\end{align*}
+\qed
