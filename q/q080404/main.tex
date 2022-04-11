@@ -1,0 +1,110 @@
+\input{thispreamble.tex}
+
+\renewcommand\AUTHOR{nweadick1@cougars.ccis.edu} % CHANGE TO YOURS
+
+\begin{document}
+\topmattertwo
+
+This is a 12-min quiz.
+If you cannot complete this quiz in time, you are strongly
+advised to study my notes carefully.
+
+For all question, you only need to write down the answers you have
+computed. Do not show your justification/computation.
+Some \LaTeX\ for you:
+\begin{enumerate}[nosep]
+\li Product: \verb!$a \cdot b$! gives you $a \cdot b$
+\li Superscript: \verb!$a^{n}$! gives you $a^{n}$
+\li Fraction: \verb!$\frac{a}{b}$! gives you $\frac{a}{b}$ or
+\verb!$a/b$! gives you $a/b$ 
+\li Binomial: \verb!$binom{a}{b}$! gives you $\binom{a}{b}$
+\li Large parentheses:
+\verb!$\left( a \right)^b$! gives you $\left( a \right)^b$ 
+\end{enumerate}
+You should simplify your answer:
+It's a common practice to wrote $(-2)^n$ as $(-1)^n 2^n$, i.e.,
+so that $(-1)^n$ is factored as a \lq\lq sign".
+It's also a common practice to simplify binomial coefficents
+such as $\binom{n + 20}{n + 1}$ to
+$\binom{n + 20}{19}$,
+i.e., no $n$ in the bottom.
+This is from $\binom{n}{r} = \binom{n}{n - r}$.
+
+%------------------------------------------------------------------------------
+\nextq
+Write down the coefficient of $x^n$ for 
+$\displaystyle\frac{1}{1 - 5x}$.
+\\
+\ANSWER
+\begin{answerlong}
+$5^n$
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+Write down the coefficient of $x^n$ for 
+$\displaystyle\frac{1}{2 + 5x}$.
+\\
+\ANSWER
+\begin{answerlong}
+$ (\frac{1}{2}) \cdot (\frac{-5}{2}^n)$
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+Write down the coefficient of $x^n$ for 
+$\displaystyle\frac{7}{2 + 5x}$.
+\\
+\ANSWER
+\begin{answerlong}
+$ (\frac{7}{2})\cdot(\frac{-5}{2}^n)$
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+Write down the coefficient of $x^n$ for 
+$\displaystyle\frac{7}{2x - 5}$.
+\\
+\ANSWER
+\begin{answerlong}
+$ (\frac{-7}{5}) \cdot (\frac{-2}{5}^n)$
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+Write down the coefficient of $x^n$ for 
+$\displaystyle \left( \frac{7}{2x + 5} \right) ^4$.
+\\
+\ANSWER
+\begin{answerlong}
+\[
+\text{coefficient of $x^n$}
+= 
+\begin{cases}
+    (\frac{7}{4})^4 \cdot \binom{3}{\frac{n}{3}} \cdot (\frac{-2}{5})^\frac{n}{3} &\text{if $n = 0,3,6,9,...$} \\
+0 &\text{otherwise}
+\end{cases}
+\]
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\nextq
+Write down the coefficient of $x^n$ for 
+$\displaystyle \left( \frac{7}{2x^3 - 5} \right) ^4$.
+\\
+\ANSWER
+\begin{answerlong}
+\[
+\text{coefficient of $x^n$}
+=
+\begin{cases}
+? &\text{if $n = ?,?,?,...$} \\
+0 &\text{otherwise}
+\end{cases}
+\]
+\end{answerlong}
+
+%------------------------------------------------------------------------------
+\newpage
+\input{instructions.tex}
+\end{document}
