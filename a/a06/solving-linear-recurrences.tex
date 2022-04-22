@@ -1,0 +1,199 @@
+\textsc{Solving linear recurrences}
+
+The first method is always by generating functions and is the best.
+
+The second method is to use characteristic equation.
+For instance if the linear recurrence is
+\[
+a_n = 5a_{n-1} - 6a_{n-2}
+\]
+then the characteristic equation is
+\[
+x^2 - 5x + 6
+\]
+which has roots $r_1 = 2, r_2 = 3$.
+Therefore the general form for $a_n$ is
+\[
+a_n = C_1 2^n + C_2 3^n
+\]
+If the linear recurrence in
+\[
+b_n = 4b_{n-1} - 4b_{n-2}
+\]
+then the characteristic equation is
+\[
+x^2 - 4x + 4
+\]
+which has roots $r_1 = r_2 = 2$.
+Therefore the general form for $b_n$ is
+\[
+b_n = C'_1 2^n + C'_2 n2^n
+\]
+In both cases, to find the constants ($C_i$ or $C'_i$), you need
+two base conditions.
+
+What about the nonhomogeneous case?
+For instance
+\[
+a_n = 5a_{n-1} - 6a_{n-2} + \underline{3n + 1}
+\]
+If you use the generating function, you will find the closed form
+for $a_n$. (See question below.)
+But what if you are using the characteristic equation method?
+
+\textsc{Step 1.} You ignore the nonhomogeneous term and solve
+\[
+a_n = 5a_{n-1} - 6a_{n-2}
+\]
+This is sometimes called the homogeneous part of the linear recurrence.
+Sometimes to differentiate this and the original,
+you can write
+\[
+a_n^{(h)} = 5a_{n-1}^{(h)} - 6a_{n-2}^{(h)}
+\]
+i.e., the sequence is $a_0^{(h)}, a_1^{(h)}, a_2^{(h)}, ...$.
+So
+\[
+a_n^{(h)} = C_1 2^n + C_2 3^n
+\]
+
+\textsc{Step 2.}
+You make an educated guess that involves the
+nonhomogeneous term.
+(This is the part I don't like about characteristic equation method.)
+The nonhomogeneous part of
+\[
+a_n = 5a_{n-1} - 6a_{n-2} + \underline{3n + 1}
+\]
+is a polynomial $3n+1$ of degree 1.
+You try and see if $a_n^{(p)} = An + B$ is a solution of 
+\[
+a_n = 5a_{n-1} - 6a_{n-2} + \underline{3n + 1}
+\]
+Substituting $a_n^{(p)} = An + B$ into the linear recurrence, you get
+\[
+An + B = 5(A(n-1) + B) - 6(A(n-2) + B) + 3n + 1
+\]
+i.e.,
+\begin{align*}
+An + B
+&= 5(A(n-1) + B) - 6(A(n-2) + B) + 3n + 1 \\
+&= 5(An - A + B) - 6(An - 2A + B) + 3n + 1 \\
+&= (5A - 6A + 3)n + (-5A + 5B + 12A - 6B + 1) \\
+&= (3 - A)n + (7A - B + 1)
+\end{align*}
+which means $A = 3 - A$ and $B = 7A - B + 1$, i.e.,
+$A = 3/2$ and $B = 23/4$.
+Therefore
+\[
+a_n^{(p)} = An + B = \frac{3}{2}n + \frac{23}{4}
+\]
+
+\textsc{Step 3}.
+You add the homogeneous and particular solutions:
+\[
+a_n = a_n^{(h)} + a_n^{(p)} = C_1 2^n + C_2 3^n + \frac{3}{2}n + \frac{23}{4}  
+\]
+Suppose the base cases are $a_0 = 2, a_1 = 3$.
+You can then solve for $C_1$ and $C_2$ with the base cases:
+\begin{align*}
+2 &= a_0 = C_1 + C_2 + \frac{23}{4} \\ 
+3 &= a_1 = 2C_1 + 3C_2 + \frac{3}{2} + \frac{23}{4}
+\end{align*}
+i.e.,
+\begin{align*}
+C_1 + C_2 &= 2 - \frac{23}{4} = -\frac{15}{4} \\ 
+2C_1 + 3C_2 &= 3 - \frac{29}{4} = -\frac{17}{4}
+\end{align*}
+This yields
+$C_1 = -15/4 - C_2 = -15/4 - 13/4 = -7$ and $C_2 = 13/4$.
+Hence
+\[
+a_n = -7 \cdot 2^n + \frac{13}{4} 3^n + \frac{3}{2}n + \frac{23}{4}  
+\]
+Here's a quick check:
+\begin{console}[frame=single,fontsize=\footnotesize]
+def an(n):
+    if n == 0: return 2
+    elif n == 1: return 3
+    else: return 5 * an(n - 1) - 6 * an(n - 2) + 3 * n + 1
+
+def bn(n):
+    return -7 * 2**n + (13/4.0) * 3**n + (1.5) * n + (23.0/4)
+
+for n in range(10):
+    print(n, an(n), bn(n))
+\end{console}
+The output is
+\begin{console}[frame=single,fontsize=\footnotesize]
+0 2 2.0
+1 3 3.0
+2 10 10.0
+3 42 42.0
+4 163 163.0
+5 579 579.0
+6 1936 1936.0
+7 6228 6228.0
+8 19549 19549.0
+9 60405 60405.0
+\end{console}
+
+The problem with the characteristic equation method is that you have to guess
+the particular solution.
+\begin{itemize}
+\item Suppose the recurrence relation is $a_n = 5a_{n-1} - 6a_{n-2} + 7n^2$.
+Then you guess $a_n^{(p)} = A + Bn + Cn^2$.
+
+\item Suppose the recurrence relation is $a_n = 5a_{n-1} - 6a_{n-2} + 2 + 7n^5$.
+Then you guess $a_n^{(p)} = A + Bn + Cn^2 + Dn^3 + En^4 + Fn^5$.
+
+\item Suppose the recurrence relation is $a_n = 5a_{n-1} - 6a_{n-2} + 7 \cdot 5^n$.
+Then you guess $a_n^{(p)} = A \cdot 5^n$.
+
+\item Suppose the recurrence relation is $a_n = 5a_{n-1} - 6a_{n-2} + (7 + 10n) \cdot 5^n$.
+Then you guess $a_n^{(p)} = (A + Bn) \cdot 5^n$.
+
+\item Suppose the recurrence relation is $a_n = 5a_{n-1} - 6a_{n-2} + 7 \cdot 2^n$.
+Then you cannot guess $a_n^{(p)} = A \cdot 2^n$. Why?
+Because the homogeneous solution has a $C_12^n$ and this overlaps with your
+guess.
+You have to guess $a_n^{(p)} = C \cdot n2^n$
+
+\item Suppose the recurrence relation is $a_n = 5a_{n-1} - 6a_{n-2} + (7 + 9n)\cdot 2^n$.
+Then you cannot guess $a_n^{(p)} = (A + Bn) \cdot 2^n$. Why?
+Because the homogeneous solution has a $C_12^n$
+and your guess contains $A 2^n$ with overlaps with $C_12^n$.
+You have to guess $a_n^{(p)} = (A + Bn) \cdot n2^n$
+
+\item Suppose the recurrence relation is $a_n = 4a_{n-1} - 4a_{n-2} + (7 + 9n)\cdot 2^n$.
+The homogeneous solution is $a_n^{(h)} = C_1 2^n + C_2 n2^n$.
+Then you cannot guess $a_n^{(p)} = (A + Bn) \cdot 2^n$. Why?
+Because the homogeneous solution has a $C_12^n$
+and your guess contains $A 2^n$ with overlaps with $C_12^n$.
+Your guess also cannot be $a_n^{(p)} = (A + Bn) \cdot n2^n$. Why?
+Because the homogeneous solution has a $C_2 n2^n$
+and your guess contains $Bn 2^n$ with overlaps with $C_2 n2^n$.
+You have to guess $a_n^{(p)} = (A + Bn) \cdot n^2 2^n$.
+
+\item So in general if the nonhomogeneous part looks like
+$\text{(polynomial of degree d)} \cdot r^n$,
+you write down 
+$\text{(polynomial of degree d)} \cdot r^n$,
+where the polynomial has constants $A,B,C,...$ for the coefficients
+for the polynomial.
+You check check if you need to change $r^n$ to
+$nr^n$, $n^2r^n$, etc. until your guess does not have any term
+that overlaps with the any term of the homogeneous solution.
+
+\item See theorem 6 in Rosen.
+\end{itemize}
+
+The problem is that you have memorize the above cases or memorize
+Theorem 6 of Rosen.
+And theorem 6 goes not even cover all cases.
+On the other hand, generating functions always work, as long as
+when $a_n$'s are converted into a power series, the corresponding
+power series for the 
+the nonhomogenous part becomes a power series that is one of the
+standard forms or can be manipulated into one of the standard forms.
+That's why I prefer to simply work with power series.

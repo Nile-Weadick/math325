@@ -1,0 +1,80 @@
+
+(a)
+If $a_n = An + B$ is a particular solution of $a_n = 2 a_{n - 1} + n + 5$, then
+\begin{align*}
+  An + B
+  &= 2 (A(n - 1) + B) + n + 5 \\ 
+  &= (2A + 1) n + (-2A + 2B + 5) \\ 
+\end{align*}
+Hence
+\begin{align*}
+  A &= 2A + 1 \\
+  B &= -2A + 2B + 5 
+\end{align*}
+i.e.,
+\begin{align*}
+  A &= - 1 \\
+  B &= 2A - 5 
+\end{align*}
+Hence $A = -1$ and $B = -7$.
+Therefore
+\[
+a^{(p)} = -n -7
+\]
+is a particular solution of $a_n = 2 a_{n - 1} + n + 5$.
+
+
+(b)
+The characteristic equation of $a_n = 2 a_{n - 1}$ is
+\[
+x - 2
+\]
+The root of the chracteristic equation is $r_1 = 2$.
+Therefore the general solution of $a_n = 2a_{n - 1}$ is
+\[
+a^{(h)} = C_1 2^n
+\]
+Hence the general solution of $a_n = 2 a_{n - 1} + n + 5$ is
+\[
+a_n = a^{(h)} +  a^{(p)} = C_1 2^n - n - 7
+\]
+
+
+(c)
+From $a_0 = 4$,
+\[
+4 = a_0 = C_1 2^0 - 0 - 7 = C_1 - 7
+\]
+i.e., $C_1 = 11$.
+Hence the solution is
+\[
+a_n = 11 \cdot 2^n - n - 7
+\]
+
+Check:
+\begin{Verbatim}[frame=single,fontsize=\small]
+def an(n):
+    if n == 0:
+        return 4
+    else:
+        return 2 * an(n - 1) + n + 5
+
+def bn(n):
+    return 11 * 2**n - n - 7
+
+for n in range(10):
+    print(n, an(n), bn(n))     
+\end{Verbatim}
+has output
+\begin{Verbatim}[frame=single,fontsize=\small]
+0 4 4
+1 14 14
+2 35 35
+3 78 78
+4 165 165
+5 340 340
+6 691 691
+7 1394 1394
+8 2801 2801
+9 5616 5616
+\end{Verbatim}

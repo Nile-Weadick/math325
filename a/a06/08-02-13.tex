@@ -1,0 +1,70 @@
+
+The characteristic equation of
+\[
+a_n = 
+\begin{cases}
+  7a_{n-2} + 6a_{n-3} &\text{if } n \geq 3 \\
+  9                 &\text{if } n = 0 \\
+  10                &\text{if } n = 1 \\
+  32                &\text{if } n = 2 \\
+\end{cases}
+\]
+is
+\[
+x^3 - 7x - 6
+\]
+By trial and error, one of the roots is $-1$.
+By long division, we get $x^3 - 7x - 6 = (x + 1)(x^2 - x - 6)$.
+The roots are $r_1 = -2$, $r_2 = -1$, $r_3 = 3$.
+Therefore the general closed form for $a_n$ is
+\[
+a_n = C_1 (-2)^n + C_2 (-1)^n + C_3 3^n
+= (-1)^n(C_12^n + C_2) + C_3 3^n
+\]
+From the base cases
+\begin{align*}
+ 9 &= a_0 = C_1 + C_2 + C_3 \tag{1}\\
+10 &= a_1 = -2C_1 - C_2 + 3C_3 \tag{2} \\
+32 &= a_2 = 4C_1 + C_2 + 9C_3 \tag{3}
+\end{align*}
+(1)+(2) and (2)+(3) give us
+\begin{align*}
+19 &= -C_1 + 4C_3 \tag{4} \\
+21 &= C_1 + 6C_3 \tag{5}
+\end{align*}
+(4) + (5) gives us $40 = 10C_3$, i.e., $C_3 = 4$.
+(4) then gives us $C_1 = -3$.
+From (1), we get $C_2 = 8$.
+Hence
+\[
+a_n = (-1)^n((-3)2^n + 8) + 4 \cdot 3^n
+\]
+for $n \geq 0$.
+\qed
+
+Check:
+\begin{console}[fontsize=\footnotesize]
+def an(n):
+    if n == 0: return 9
+    elif n == 1: return 10
+    elif n == 2: return 32
+    else: return 7 * an(n - 2) + 6 * an(n - 3) 
+
+def bn(n):
+    return (-1)**n*((-3)*2**n + 8) + 4 * 3**n
+
+for n in range(10):
+    print(n, an(n), bn(n))
+\end{console}
+\begin{console}[fontsize=\footnotesize]
+0 9 9
+1 10 10
+2 32 32
+3 124 124
+4 284 284
+5 1060 1060
+6 2732 2732
+7 9124 9124
+8 25484 25484
+9 80260 80260
+\end{console}

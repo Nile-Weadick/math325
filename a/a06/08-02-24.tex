@@ -1,0 +1,76 @@
+
+(a)
+If $a_n = n 2^n$, then
+\begin{align*}
+  2 a_{n - 1} + 2^n
+  &= 2 (n - 1) 2^{n - 1} + 2^n \\
+  &= (n - 1) 2^{n} + 2^n \\
+  &= n 2^{n} \\
+  &= a_n
+\end{align*}
+Hence
+\[
+a_n^{(p)} = n 2^n
+\]
+is a (particular) solution of $a_n = 2 a_{n - 1} + 2^n$.
+
+(b)
+The characteristic equation of
+$a_n = 2 a_{n - 1}$
+is
+\[
+x - 2
+\]
+The root of the charactistic equation is $r_1 = 2$.
+Therefore the general solution to
+$a_n = 3a_{n - 1}$ is $C_1 2^n$, i.e.,
+\[
+a_n^{(h)} = C_1 2^n
+\]
+where $C_1$ is a constant.
+Hence the general solution to
+$a_n = 3a_{n - 1} + 2^n$ is
+\[
+a_n = a_n^{(h)} + a_n^{(p)} = C_1 2^n + n2^n
+\]
+where $C_1$ is a constant.
+
+(c)
+Using the base case,
+\[
+2 = a_0 = C_1 2^0 + 0 = C_1
+\]
+Hence $C_1 = 2$.
+Therefore
+\[
+a_n = 2 \cdot 2^n + n2^n = (2 + n) 2^n 
+\]
+\qed
+
+Check:
+\begin{Verbatim}[frame=single,fontsize=\small]
+def an(n):
+    if n == 0:
+        return 2
+    else:
+        return 2 * an(n - 1) + 2**n
+
+def bn(n):
+    return (2 + n) * 2**n
+
+for n in range(10):
+    print(n, an(n), bn(n))     
+\end{Verbatim}
+has output
+\begin{Verbatim}[frame=single,fontsize=\small]
+0 2 2
+1 6 6
+2 16 16
+3 40 40
+4 96 96
+5 224 224
+6 512 512
+7 1152 1152
+8 2560 2560
+9 5632 5632
+\end{Verbatim}

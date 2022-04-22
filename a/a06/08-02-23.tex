@@ -1,0 +1,79 @@
+
+(a)
+If $a_n = -2^{n+1}$, then
+\begin{align*}
+3a_{n-1} + 2^n
+&= 3(-2^{(n-1)+1}) + 2^n \\
+&= 3(-2^n) + 2^n \\
+&= (3(-1) + 1) \cdot 2^n \\
+&= -2 \cdot 2^n \\
+&= -2^{n + 1} \\
+&= a_n
+\end{align*}
+Hence
+\[
+a_n^{(p)} = -2^{n+1}
+\]
+is a (particular) solution of $a_n = 3a_{n - 1} + 2^n$.
+
+
+(b)
+The characteristic equation of
+$a_n = 3a_{n - 1}$
+is
+\[
+x - 3
+\]
+The root of the charactistic equation is $r_1 = 3$.
+Therefore the general solution to
+$a_n = 3a_{n - 1}$ is $C_1 3^n$, i.e.,
+\[
+a_n^{(h)} = C_1 3^n
+\]
+where $C_1$ is a constant.
+Hence the general solution to
+$a_n = 3a_{n - 1} + 2^n$ is
+\[
+a_n = a_n^{(h)} + a_n^{(p)} = C_1 3^n -2^{n+1}
+\]
+where $C_1$ is a constant.
+
+(c)
+Using the base case,
+\[
+1 = a_0 = C_1 3^0 -2^{0+1} = C_1 - 2
+\]
+Hence $C_1 = 3$.
+Therefore
+\[
+a_n = 3 \cdot 3^n -2^{n+1}
+\]
+\qed
+
+Check:
+\begin{Verbatim}[frame=single,fontsize=\small]
+def an(n):
+    if n == 0:
+        return 1
+    else:
+        return 3 * an(n - 1) + 2**n
+
+def bn(n):
+    return 3 * 3**n - 2**(n + 1)
+
+for n in range(10):
+    print(n, an(n), bn(n))     
+\end{Verbatim}
+has output
+\begin{Verbatim}[frame=single,fontsize=\small]
+0 1 1
+1 5 5
+2 19 19
+3 65 65
+4 211 211
+5 665 665
+6 2059 2059
+7 6305 6305
+8 19171 19171
+9 58025 58025
+\end{Verbatim}

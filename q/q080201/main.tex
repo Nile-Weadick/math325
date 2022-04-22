@@ -1,0 +1,86 @@
+\input{thispreamble.tex}
+
+\renewcommand\AUTHOR{nweadick1@cougars.ccis.edu} % CHANGE TO YOURS
+
+\begin{document}
+\topmattertwo
+
+This is a 10-min quiz.
+If you cannot complete this quiz in 10 minutes, you are strongly
+advised to study my notes carefully.
+
+For all question, you only need to write down the answers you have
+computed. Do not show your justification/computation.
+Some \LaTeX\ for you:
+\begin{enumerate}[nosep]
+\li Product: \verb!$a \cdot b$! gives you $a \cdot b$
+\li Superscript: \verb!$a^{n}$! gives you $a^{n}$.
+\li Square root: \verb!$\sqrt{a}$! gives you $\sqrt{a}$.
+\li Fraction: \verb!$\frac{a}{b}$! gives you $\frac{a}{b}$ or
+\verb!$a/b$! gives you $a/b$ 
+\li Binomial: \verb!$binom{a}{b}$! gives you $\binom{a}{b}$
+\li Large parentheses:
+\verb!$\left( a \right)^b$! gives you $\left( a \right)^b$ 
+\end{enumerate}
+It's a common practice to wrote $(-2)^n$ as $(-1)^n 2^n$, i.e.,
+so that $(-1)^n$ is factored as a \lq\lq sign".
+It's also a common practice to simplify binomial coefficents
+such as $\binom{n + 20}{n + 1}$ to
+$\binom{n + 20}{19}$,
+i.e., no $n$ in the bottom.
+This is from $\binom{n}{r} = \binom{n}{n - r}$.
+
+%------------------------------------------------------------------------------
+Consider the recurrence
+\[
+a_n = 4a_{n-1} + a_{n-2}
+\]
+for $n \geq 1$ and $a_0 = 1, a_1 = 2$.
+\\
+
+\nextq
+What is the characteristic equation for the $a_n$ recurrence?
+\\
+\ANSWER
+\begin{answerlong}
+$ x^2-4x-1 = 0 $
+\end{answerlong}
+(No explanation needed.)
+
+\nextq
+What are the roots of the characteristic equation?
+\\
+\ANSWER
+\begin{answerlong}
+$r_1 = 2+\sqrt{5}, r_2 = 2-\sqrt{5}$
+\end{answerlong}
+(No explanation needed.)
+
+\nextq
+What is the general form of the closed form for $a_n$?
+\\
+\ANSWER
+\begin{answerlong}
+$a_n = C_1 \cdot (2+\sqrt{5})^n + C_2 \cdot (2-\sqrt{5})^n$, where $C_1, C_2$ are constants to be determined.
+\end{answerlong}
+(No explanation needed.)
+
+\nextq
+Using the method of characteristic equation, find a closed form for $a_n$.
+\\
+\ANSWER
+\begin{answerlong}
+    $a_n = \frac{1}{2} \cdot (2+\sqrt{5})^n + \frac{1}{2} \cdot (2-\sqrt{5})^n$
+\end{answerlong}
+(No explanation needed.)
+
+\textsc{Note.}
+Just because the method of characteristic equation makes solving recurrences
+easier, it does not mean that generating functions are useless.
+Generating functions \textit{explains} why the roots of the characteristic
+equation can be used to find closed.
+
+%------------------------------------------------------------------------------
+\newpage
+\input{instructions.tex}
+\end{document}
